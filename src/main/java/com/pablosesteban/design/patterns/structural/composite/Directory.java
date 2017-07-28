@@ -14,6 +14,8 @@ import java.util.List;
 
 /*
 COMPOSITE
+    containter object contains other objects: containers and primitives (childrens)
+    
     defines behavior for components having childrens
 
     implements behavior for child-related operations in the Component interface
