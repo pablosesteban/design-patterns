@@ -12,6 +12,11 @@ import java.util.LinkedList;
  *
  * @author psantamartae
  */
+
+/*
+CLIENT
+    manipulates objects in the composition through the Component interface
+*/
 public class App {
     public static final int FORMAT = 3;
     public static StringBuffer formatter = new StringBuffer();

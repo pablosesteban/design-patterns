@@ -12,7 +12,12 @@ import java.util.List;
  * @author psantamartae
  */
 
-// COMPOSITE
+/*
+COMPOSITE
+    defines behavior for components having childrens
+
+    implements behavior for child-related operations in the Component interface
+*/
 public class Directory extends AbstractFile {
     private String name;
     private List<AbstractFile> files;

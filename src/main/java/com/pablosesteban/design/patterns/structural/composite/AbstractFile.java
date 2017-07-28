@@ -14,7 +14,7 @@ package com.pablosesteban.design.patterns.structural.composite;
 COMPONENT
     declares the interface for objects in the composition
     
-    implements default behaviour for the interface common to all clases (abstract class)
+    implements default behavior for the interface common to all clases (abstract class)
 
     declares an interface for accessing and managing its child components and optional for accessing a component's parent (interface)
 */
