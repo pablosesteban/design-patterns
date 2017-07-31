@@ -53,21 +53,21 @@ public class App {
         sabina.add(loNiegoTodo);
         sabina.add(alivioDeLuto);
         
-        File qmqm = new File("Quien mas, quien menos.mp3");
-        File ntd = new File("No tan deprisa.mp3");
-        File lnt = new File("Lo niego todo.mp3");
+        File track1 = new File("Quien mas, quien menos.mp3");
+        File track2 = new File("No tan deprisa.mp3");
+        File track3 = new File("Lo niego todo.mp3");
         
-        loNiegoTodo.add(qmqm);
-        loNiegoTodo.add(ntd);
-        loNiegoTodo.add(lnt);
+        loNiegoTodo.add(track1);
+        loNiegoTodo.add(track2);
+        loNiegoTodo.add(track3);
         
-        File pdp = new File("Pajaros de portugal.mp3");
-        File pdg = new File("Pie de guerra.mp3");
-        File r = new File("Resumiendo.mp3");
+        File track4 = new File("Pajaros de portugal.mp3");
+        File track5 = new File("Pie de guerra.mp3");
+        File track6 = new File("Resumiendo.mp3");
         
-        alivioDeLuto.add(pdp);
-        alivioDeLuto.add(pdg);
-        alivioDeLuto.add(r);
+        alivioDeLuto.add(track4);
+        alivioDeLuto.add(track5);
+        alivioDeLuto.add(track6);
         
         music.ls();
         
@@ -76,8 +76,9 @@ public class App {
         System.out.println(loNiegoTodo);
         System.out.println(alivioDeLuto);
         
-        alivioDeLuto.remove(r);
+        alivioDeLuto.remove(track6);
         
         music.ls();
     }
+    
 }

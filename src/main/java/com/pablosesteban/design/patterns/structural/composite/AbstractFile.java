@@ -113,10 +113,7 @@ public abstract class AbstractFile {
 
     @Override
     public String toString() {
-        if (parent != null)
-            return "{name: " + name + ", parent: " + parent.name + "}";
-        
-        return "{name: " + name + "}";
+        return "{name: " + name + ", parent: " + (parent != null ? parent.name : "null") + "}";
     }
     
 }
