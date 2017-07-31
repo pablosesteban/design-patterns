@@ -37,6 +37,12 @@ IMPLEMENTATION ISSUE: DELETING COMPONENTS
     if Leaf classes are immutable those would be the exception
 */
 public class Directory extends AbstractFile {
+    /*
+    IMPLEMENTATION ISSUE: BEST DATA STRUCTURE FOR STORING COMPONENTS
+        the choice of data structure depends on efficiency
+    
+        sometimes composites can have a variable for each child
+    */
     private List<AbstractFile> files;
     
     public Directory(String name, List<AbstractFile> files) {
