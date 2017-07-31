@@ -11,14 +11,12 @@ package com.pablosesteban.design.patterns.structural.composite;
  */
 
 /*
-LEAF
+LEAF CLASS
     leaf objects has no childrens
 
     defines behavior for primitive objects in the composition
 */
 public class File extends AbstractFile {
-    private String name;
-    
     public File(String name) {
         this.name = name;
     }

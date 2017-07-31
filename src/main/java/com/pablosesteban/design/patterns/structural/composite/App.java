@@ -18,10 +18,19 @@ import java.util.LinkedList;
  *      lets clients treat individual objects and compositions of objects uniformly
  * 
  *      code that uses these classes must treat primitive and container objects differently even if most of the time the user treats them identically
+ * 
+ *      makes the client simple
+ * 
+ *      makes it easier to add new kinds of components
+ * 
+ *      a disadvantage is that can make the design overly general:
+ *          makes it harder to restrict the components of a composite
+ * 
+ *          you can't rely on type system to have only certain components on the composite (use runtime checks)
  */
 
 /*
-CLIENT
+CLIENT CLASS
     use the Component interface to interact with objects in the composite structure and if:
         the component is a Leaf, the request is handled directly
 
@@ -44,13 +53,30 @@ public class App {
         sabina.add(loNiegoTodo);
         sabina.add(alivioDeLuto);
         
-        loNiegoTodo.add(new File("Quien mas, quien menos.mp3"));
-        loNiegoTodo.add(new File("No tan deprisa.mp3"));
-        loNiegoTodo.add(new File("Lo niego todo.mp3"));
+        File qmqm = new File("Quien mas, quien menos.mp3");
+        File ntd = new File("No tan deprisa.mp3");
+        File lnt = new File("Lo niego todo.mp3");
         
-        alivioDeLuto.add(new File("Pajaros de portugal.mp3"));
-        alivioDeLuto.add(new File("Pie de guerra.mp3"));
-        alivioDeLuto.add(new File("Resumiendo.mp3"));
+        loNiegoTodo.add(qmqm);
+        loNiegoTodo.add(ntd);
+        loNiegoTodo.add(lnt);
+        
+        File pdp = new File("Pajaros de portugal.mp3");
+        File pdg = new File("Pie de guerra.mp3");
+        File r = new File("Resumiendo.mp3");
+        
+        alivioDeLuto.add(pdp);
+        alivioDeLuto.add(pdg);
+        alivioDeLuto.add(r);
+        
+        music.ls();
+        
+        System.out.println(music);
+        System.out.println(sabina);
+        System.out.println(loNiegoTodo);
+        System.out.println(alivioDeLuto);
+        
+        alivioDeLuto.remove(r);
         
         music.ls();
     }
