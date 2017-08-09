@@ -29,6 +29,8 @@ IMPLEMENTATION ISSUE: SUBCLASSING THE SINGLETON CLASS
         no longer is the Singleton class responsible for creating the singleton, its primary responsibility is to make the singleton object of choice accessible in the system
 */
 public class SingletonRegistry {
+    private static final Logger LOGGER = Logger.getLogger(SingletonRegistry.class.getName());
+    
     private static SingletonRegistry instance;
     private static final Map<String, SingletonRegistry> REGISTRY = new HashMap<>();
     
@@ -45,20 +47,28 @@ public class SingletonRegistry {
     }
     
     // consults the registry
-    public static SingletonRegistry getInstance(String className) {
-        instance = lookup(className);
+    public static SingletonRegistry getInstance(String fullyQualifiedClassName) {
+        instance = lookup(fullyQualifiedClassName);
         
         if (instance == null) {
             synchronized(SingletonRegistry.class) {
+                LOGGER.info("Thread " + Thread.currentThread().getName() + " registers the singleton");
+                
+                try {
+                    Thread.sleep(3000);
+                } catch (InterruptedException ie) {
+                    LOGGER.log(Level.SEVERE, "Thread " + Thread.currentThread().getName() + " interrupted", ie);
+                }
+                
                 if (instance == null) {
                     try {
-                        instance = (SingletonRegistry) Class.forName(className).newInstance();
+                        instance = (SingletonRegistry) Class.forName(fullyQualifiedClassName).newInstance();
                     } catch (ClassNotFoundException cnfe) {
-                        Logger.getLogger(SingletonRegistry.class.getName()).log(Level.SEVERE, "Couldn't find class " + className, cnfe);
+                        LOGGER.log(Level.SEVERE, "Couldn't find class " + fullyQualifiedClassName, cnfe);
                     } catch(InstantiationException ie) {
-                        Logger.getLogger(SingletonRegistry.class.getName()).log(Level.SEVERE, "Couldn't instantiate an object of type " + className, ie);
+                        LOGGER.log(Level.SEVERE, "Couldn't instantiate an object of type " + fullyQualifiedClassName, ie);
                     } catch(IllegalAccessException ia) {
-                        Logger.getLogger(SingletonRegistry.class.getName()).log(Level.SEVERE, "Couldn't access class " + className, ia);
+                        LOGGER.log(Level.SEVERE, "Couldn't access class " + fullyQualifiedClassName, ia);
                     }
                 }
             }
@@ -68,10 +78,18 @@ public class SingletonRegistry {
     }
     
     public static void main(String[] args) {
-        SingletonRegistry instance1 = SingletonRegistry.getInstance("SingletonImpl1");
-        SingletonRegistry instance2 = SingletonRegistry.getInstance("SingletonImpl1");
+        SingletonRegistry instance1 = SingletonRegistry.getInstance("com.pablosesteban.design.patterns.creational.singleton.SingletonImpl1");
         
-        System.out.println(instance1 == instance2);
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                SingletonRegistry instance2 = SingletonRegistry.getInstance("com.pablosesteban.design.patterns.creational.singleton.SingletonImpl1");
+                
+                System.out.println("instance2: " + instance2);
+            }
+        }).start();
+        
+        System.out.println("instance1: " + instance1);
     }
     
 }
