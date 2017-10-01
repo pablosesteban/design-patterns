@@ -9,17 +9,27 @@ package com.pablosesteban.design.patterns.structural.adapter;
  *
  * @author psantamartae
  */
+
+/*
+ADAPTEE
+    defines an existing interface that needs adapting
+*/
 public interface Xpay {
     String getCreditCardNo();
-    String getCustomerName();
-    String getCardExpMonth();
-    String getCardExpYear();
-    Short getCardCVVNo();
-    Double getAmount();
     void setCreditCardNo(String creditCardNo);
+    
+    String getCustomerName();
     void setCustomerName(String customerName);
+    
+    String getCardExpMonth();
     void setCardExpMonth(String cardExpMonth);
+    
+    String getCardExpYear();
     void setCardExpYear(String cardExpYear);
+    
+    Short getCardCVVNo();
     void setCardCVVNo(Short cardCVVNo);
+    
+    Double getAmount();
     void setAmount(Double amount);
 }

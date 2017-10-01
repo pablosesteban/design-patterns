@@ -15,9 +15,14 @@ ADAPTER DESIGN PATTERN
     convert the interface of a class into another interface clients expect and lets classes work together that couldn't otherwise because of incompatible interfaces
     
     two ways:
-        INHERITANCE: making "adapter" class inherit from both "adaptee" and "targer" interfaces (multiple inheritance required)
+        INHERITANCE: making "adapter" class inherit from both "adaptee" and "target" interfaces (multiple inheritance required)
         
         COMPOSITION: composing the "adaptee" instance within the "adapter" instance and implementing it in terms of the "adaptee" interface
+*/
+
+/*
+CLIENT
+    call operations on an Adapter instance, which in turn calls Adaptee operations that carry out the request
 */
 public class App {
     public static void main(String[] args) {
