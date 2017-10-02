@@ -1,0 +1,52 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.pablosesteban.design.patterns.behavioral.observer.displayers;
+
+import com.pablosesteban.design.patterns.behavioral.observer.Observer;
+import com.pablosesteban.design.patterns.behavioral.observer.WeatherData;
+
+/**
+ *
+ * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
+ */
+public class StatisticsTemperature implements Observer, Displayer {
+    private float maxTemp = 0.0f;
+    private float minTemp = 200;
+    private float averageSum= 0.0f;
+    private int numReadings;
+    
+    // keep this reference in order to allow the Observer to un-register itself with the Subject
+    private WeatherData weatherData;
+    
+    public StatisticsTemperature(WeatherData weatherData) {
+        this.weatherData = weatherData;
+        
+        weatherData.register(this);
+    }
+    
+    @Override
+    public void update(float temp, float humidity, float pressure) {
+        averageSum += temp;
+        
+        numReadings++;
+        
+        if (temp > maxTemp) {
+            maxTemp = temp;
+        }
+        
+        if (temp < minTemp) {
+            minTemp = temp;
+        }
+        
+        display();
+    }
+    
+    @Override
+    public void display() {
+        System.out.println("StatisticsTemperature{\n\taverageSum: " + (averageSum / numReadings) + ",\n\tmaxTemp: " + maxTemp + ",\n\tminTemp: " + minTemp + "\n}");
+    }
+    
+}
