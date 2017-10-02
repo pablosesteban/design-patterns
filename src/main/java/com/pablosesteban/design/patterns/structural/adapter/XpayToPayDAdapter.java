@@ -11,8 +11,10 @@ package com.pablosesteban.design.patterns.structural.adapter;
  */
 
 /*
-ADAPTER CLASS
-    
+ADAPTER
+    adapts the interface of the Adaptee to the Target interface
+
+    calls Adaptee operations that carry out the request
 */
 public class XpayToPayDAdapter implements PayD {
     private String custCardNo;
@@ -21,6 +23,7 @@ public class XpayToPayDAdapter implements PayD {
     private Integer cVVNo;
     private Double totalAmount;
     
+    // object composition (Adaptee)
     private final Xpay xpay;
     
     public XpayToPayDAdapter(Xpay xpay) {

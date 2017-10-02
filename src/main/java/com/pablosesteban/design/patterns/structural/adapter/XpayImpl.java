@@ -10,10 +10,6 @@ package com.pablosesteban.design.patterns.structural.adapter;
  * @author psantamartae
  */
 
-/*
-ADAPTEE CLASS
-    
-*/
 public class XpayImpl implements Xpay {
     private String creditCardNo;
     private String customerName;
