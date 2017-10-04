@@ -5,8 +5,8 @@
  */
 package com.pablosesteban.design.patterns.behavioral.observer;
 
-import com.pablosesteban.design.patterns.behavioral.observer.displayers.CurrentConditions;
-import com.pablosesteban.design.patterns.behavioral.observer.displayers.StatisticsTemperature;
+import com.pablosesteban.design.patterns.behavioral.observer.displayer.CurrentConditions;
+import com.pablosesteban.design.patterns.behavioral.observer.displayer.StatisticsTemperature;
 
 /**
  *
