@@ -9,6 +9,8 @@ package com.pablosesteban.design.patterns.behavioral.observer.displayer;
  *
  * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
  */
+
+// let’s also create an interface for all display elements to implement
 public interface Displayer {
     void display();
     

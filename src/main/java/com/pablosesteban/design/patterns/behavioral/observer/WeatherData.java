@@ -18,6 +18,8 @@ public class WeatherData implements Subject {
     private float temperature;
     private float pressure;
     private float humidity;
+    
+    // each subject can have many observers (one to many)
     private ArrayList<Observer> observers;
     
     public WeatherData() {
@@ -34,6 +36,7 @@ public class WeatherData implements Subject {
     @Override
     public void remove(Observer o) {
         if (observers.contains(o)) {
+            // be aware of EQUALS in observers...
             observers.remove(o);
         }
     }
@@ -50,13 +53,32 @@ public class WeatherData implements Subject {
         notifyObservers();
     }
     
-    // to test our display elements. TODO: grab measurements off the web
+    /*
+    to simulate the change of measurements and test our display elements
+    
+    TODO: grab measurements off the web
+    */
     public void setMeasurements(float temperature, float humidity, float pressure) {
         this.temperature = temperature;
         this.humidity = humidity;
         this.pressure = pressure;
         
         measurementsChanged();
+    }
+    
+    /*
+    in order to be able to make PULL requests the Subject class need to have getters
+    */
+    public float getTemperature() {
+        return temperature;
+    }
+
+    public float getPressure() {
+        return pressure;
+    }
+
+    public float getHumidity() {
+        return humidity;
     }
     
 }

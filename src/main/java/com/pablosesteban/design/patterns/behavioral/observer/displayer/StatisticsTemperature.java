@@ -46,7 +46,7 @@ public class StatisticsTemperature implements Observer, Displayer {
     
     @Override
     public void display() {
-        System.out.println("StatisticsTemperature{\n\taverageSum: " + (averageSum / numReadings) + ",\n\tmaxTemp: " + maxTemp + ",\n\tminTemp: " + minTemp + "\n}");
+        System.out.println("StatisticsTemperature{\n\taverageSum: " + Math.round(averageSum / numReadings) + ",\n\tmaxTemp: " + maxTemp + ",\n\tminTemp: " + minTemp + "\n}");
     }
     
 }
