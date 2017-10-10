@@ -36,7 +36,7 @@ public class WeatherData implements Subject {
     @Override
     public void remove(Observer o) {
         if (observers.contains(o)) {
-            // be aware of EQUALS in observers...
+            // be aware of EQUALS method in observers...
             observers.remove(o);
         }
     }
