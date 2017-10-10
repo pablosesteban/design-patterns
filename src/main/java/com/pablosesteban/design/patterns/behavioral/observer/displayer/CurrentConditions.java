@@ -13,6 +13,7 @@ import com.pablosesteban.design.patterns.behavioral.observer.Subject;
  * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
  */
 public class CurrentConditions implements Observer, Displayer {
+    // depends on the Subject to get its state
     private float temperature;
     private float humidity;
     

@@ -14,7 +14,11 @@ import java.util.ArrayList;
 
 // gets the data from a Weather Station
 public class WeatherData implements Subject {
-    // not all observers need the whole state...
+    /*
+    holds the data (state)
+    
+    not all observers need the whole state...
+    */
     private float temperature;
     private float pressure;
     private float humidity;
@@ -40,7 +44,8 @@ public class WeatherData implements Subject {
             observers.remove(o);
         }
     }
-
+    
+    // tell all the Observers about the state
     @Override
     public void notifyObservers() {
         for (Observer observer : observers) {
@@ -66,9 +71,7 @@ public class WeatherData implements Subject {
         measurementsChanged();
     }
     
-    /*
-    in order observers to be able to make PULL requests
-    */
+    // may want to be able to set/get its state... i.e. in order observers to be able to make PULL requests
     public float getTemperature() {
         return temperature;
     }

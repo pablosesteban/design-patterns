@@ -13,6 +13,7 @@ import com.pablosesteban.design.patterns.behavioral.observer.WeatherData;
  * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
  */
 public class StatisticsTemperature implements Observer, Displayer {
+    // depends on the Subject to get its state
     private float maxTemp = 0.0f;
     private float minTemp = 200;
     private float averageSum = 0.0f;

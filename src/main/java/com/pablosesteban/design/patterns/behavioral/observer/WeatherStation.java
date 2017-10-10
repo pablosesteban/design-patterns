@@ -21,7 +21,16 @@ DESIGN PATTERN: OBSERVER
 
     the subject is the sole owner of that data, the observers are dependent on the subject to update them when the data changes -> leads to a cleaner OO design than allowing many objects to control the same data
 
-    provides an object design where subjects and observers are LOOSELY COUPLED: the only thing the subject knows about an observer is that it implements a certain interface (Observer)
+    provides an object design where subjects and observers are LOOSELY COUPLED:
+        the only thing the Subject knows about an observer is that it implements a certain interface (Observer)
+
+        the only thing the Subject depends on is a list of objects that implement the Observer interface -> we can add/remove/replace any observer at runtime
+
+        there is no need to modify the subject to add new observers -> implement the Observer interface in the new class and register as an observer
+
+        Subjects and Observers can be reused independently of each other
+
+        changes to either Subjects or Observers will not affect each other
 
     JAVA provides some built-in support for the Observer pattern
 

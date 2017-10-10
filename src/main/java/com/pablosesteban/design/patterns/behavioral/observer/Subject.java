@@ -15,6 +15,8 @@ SUBJECT INTERFACE
     this interface gives Observers a way to register as observers and also to remove themselves from being observers
 
     also gives to Subject a way to update all the current observers whenever state changes
+
+    is the only object that contains the state and controls it, it is the sole owner of the data leading to a cleaner OO design than allowing many object to control the same data
 */
 public interface Subject {
     // observer to be registered

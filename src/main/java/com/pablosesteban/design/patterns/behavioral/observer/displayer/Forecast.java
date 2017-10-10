@@ -13,6 +13,7 @@ import com.pablosesteban.design.patterns.behavioral.observer.WeatherData;
  * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
  */
 public class Forecast implements Observer, Displayer {
+    // depends on the Subject to get its state
     private float currentPressure = 29.92f;
     private float lastPressure;
     
