@@ -6,7 +6,6 @@
 package com.pablosesteban.design.patterns.behavioral.observer;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
@@ -15,6 +14,7 @@ import java.util.List;
 
 // gets the data from a Weather Station
 public class WeatherData implements Subject {
+    // not all observers need the whole state...
     private float temperature;
     private float pressure;
     private float humidity;
@@ -67,7 +67,7 @@ public class WeatherData implements Subject {
     }
     
     /*
-    in order to be able to make PULL requests the Subject class need to have getters
+    in order observers to be able to make PULL requests
     */
     public float getTemperature() {
         return temperature;

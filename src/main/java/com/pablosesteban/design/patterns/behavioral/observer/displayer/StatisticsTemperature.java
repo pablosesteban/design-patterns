@@ -15,7 +15,7 @@ import com.pablosesteban.design.patterns.behavioral.observer.WeatherData;
 public class StatisticsTemperature implements Observer, Displayer {
     private float maxTemp = 0.0f;
     private float minTemp = 200;
-    private float averageSum= 0.0f;
+    private float averageSum = 0.0f;
     private int numReadings;
     
     // keep this reference in order to allow the Observer to un-register itself with the Subject

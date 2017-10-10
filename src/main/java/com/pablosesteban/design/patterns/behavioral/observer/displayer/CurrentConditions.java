@@ -14,7 +14,6 @@ import com.pablosesteban.design.patterns.behavioral.observer.Subject;
  */
 public class CurrentConditions implements Observer, Displayer {
     private float temperature;
-    private float pressure;
     private float humidity;
     
     // keep this reference in order to allow the Observer to un-register itself with the Subject
@@ -31,14 +30,13 @@ public class CurrentConditions implements Observer, Displayer {
     public void update(float temperature, float humidity, float pressure) {
         this.temperature = temperature;
         this.humidity = humidity;
-        this.pressure = pressure;
         
         display();
     }
 
     @Override
     public void display() {
-        System.out.println("CurrentConditions{\n\ttemperature: " + temperature + ",\n\tpressure: " + pressure + ",\n\thumidity: " + humidity + "\n}");
+        System.out.println("CurrentConditions{\n\ttemperature: " + temperature + ",\n\thumidity: " + humidity + "\n}");
     }
     
 }

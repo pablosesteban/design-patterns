@@ -9,6 +9,7 @@ package com.pablosesteban.design.patterns.behavioral.observer;
  *
  * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
  */
+
 /*
 OBSERVER INTERFACE
     this gives the Subject a common interface to talk to when it comes time to update the Observers
@@ -16,7 +17,14 @@ OBSERVER INTERFACE
     just has one method that gets called when the Subject’s state changes
 */
 public interface Observer {
-    // TODO: better way of passing the updated state to the observers?
+    /*
+    PUSH way of sending the updated state
+    
+    TODO: better way of passing the updated state to the observers
+        not all observers need the whole state
+    
+        allowing PULL requests from observers
+    */
     void update(float temperature, float humidity, float pressure);
     
 }
