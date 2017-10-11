@@ -12,7 +12,7 @@ import com.pablosesteban.design.patterns.behavioral.observer.WeatherData;
  *
  * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
  */
-public class StatisticsTemperature implements Observer, Displayer {
+public class Statistics implements Observer, Displayer {
     // depends on the Subject to get its state
     private float maxTemp = 0.0f;
     private float minTemp = 200;
@@ -22,7 +22,7 @@ public class StatisticsTemperature implements Observer, Displayer {
     // keep this reference in order to allow the Observer to un-register itself with the Subject
     private WeatherData weatherData;
     
-    public StatisticsTemperature(WeatherData weatherData) {
+    public Statistics(WeatherData weatherData) {
         this.weatherData = weatherData;
         
         weatherData.register(this);

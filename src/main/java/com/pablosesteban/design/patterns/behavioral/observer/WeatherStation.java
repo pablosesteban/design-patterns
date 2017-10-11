@@ -6,7 +6,11 @@
 package com.pablosesteban.design.patterns.behavioral.observer;
 
 import com.pablosesteban.design.patterns.behavioral.observer.displayer.CurrentConditions;
-import com.pablosesteban.design.patterns.behavioral.observer.displayer.StatisticsTemperature;
+import com.pablosesteban.design.patterns.behavioral.observer.displayer.Forecast;
+import com.pablosesteban.design.patterns.behavioral.observer.displayer.Statistics;
+import com.pablosesteban.design.patterns.behavioral.observer.jdk_builtin.CurrentConditionsJDK;
+import com.pablosesteban.design.patterns.behavioral.observer.jdk_builtin.StatisticsJDK;
+import com.pablosesteban.design.patterns.behavioral.observer.jdk_builtin.WeatherDataJDK;
 
 /**
  *
@@ -39,14 +43,30 @@ DESIGN PRINCIPLE: strive for loosely coupled designs, instead of tightly coupled
 */
 public class WeatherStation {
     public static void main(String[] args) {
+        // Subject - Publisher
         WeatherData weatherData = new WeatherData();
+        
+        // Observers - Suscribers
         new CurrentConditions(weatherData);
-        new StatisticsTemperature(weatherData);
+        new Statistics(weatherData);
+        new Forecast(weatherData);
         
         // simulate new weather measurements
         weatherData.setMeasurements(27, 30, 30.4f);
         weatherData.setMeasurements(37, 40, 10.4f);
         weatherData.setMeasurements(19, 10, 3.4f);
+        
+        // Subject - Publisher
+        WeatherDataJDK weatherDataJdk = new WeatherDataJDK();
+        
+        // Observers - Suscribers
+        new CurrentConditionsJDK(weatherDataJdk);
+        new StatisticsJDK(weatherDataJdk);
+        
+        // simulate new weather measurements
+        weatherDataJdk.setMeasurements(27, 30, 30.4f);
+        weatherDataJdk.setMeasurements(37, 40, 10.4f);
+        weatherDataJdk.setMeasurements(19, 10, 3.4f);
     }
     
 }
