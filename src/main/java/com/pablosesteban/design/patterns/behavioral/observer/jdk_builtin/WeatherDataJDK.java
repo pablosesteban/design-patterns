@@ -38,6 +38,7 @@ public class WeatherDataJDK extends Observable {
         // needed to indicate the state has changed before calling notifyObservers()
         setChanged();
         
+        // PULL
         notifyObservers();
     }
     
