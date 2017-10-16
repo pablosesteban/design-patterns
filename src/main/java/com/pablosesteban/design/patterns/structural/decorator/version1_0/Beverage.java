@@ -13,7 +13,7 @@ package com.pablosesteban.design.patterns.structural.decorator.version1_0;
 /*
 abstract class subclassed by all beverages
 
-you can also ask for several condiments so there will be a CLASS EXPLOSION!
+the problem is that you can also ask for several condiments so there will be a CLASS EXPLOSION!
 */
 public abstract class Beverage {
     // set in each subclass and holds a description of the beverage

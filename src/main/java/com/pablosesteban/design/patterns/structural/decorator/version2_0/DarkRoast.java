@@ -14,9 +14,10 @@ public class DarkRoast extends Beverage {
         description = "Dark Roast Coffee";
     }
     
+    // compute the cost of the beverage and add in the condiments by calling super cost() method
     @Override
     public float cost() {
-        return super.cost();
+        return 1.99f + super.cost();
     }
     
 }
