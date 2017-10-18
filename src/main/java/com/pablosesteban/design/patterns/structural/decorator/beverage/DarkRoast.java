@@ -12,20 +12,16 @@ package com.pablosesteban.design.patterns.structural.decorator.beverage;
 
 /*
 CONCRETE COMPONENT
-    
 */
 public class DarkRoast extends Beverage {
     private static final float COST = 0.99f;
     
+    // set a description for this specific beverage
     public DarkRoast() {
-        description = "Dark Roast Coffee";
+        description = "Dark Roast";
     }
     
-    @Override
-    public String getDescription() {
-        return description;
-    }
-
+    // only need to return the price of this kind of beverage
     @Override
     public float cost() {
         return COST;

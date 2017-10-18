@@ -5,6 +5,8 @@
  */
 package com.pablosesteban.design.patterns.structural.decorator.condiment;
 
+import com.pablosesteban.design.patterns.structural.decorator.beverage.Beverage;
+
 /**
  *
  * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
@@ -12,19 +14,24 @@ package com.pablosesteban.design.patterns.structural.decorator.condiment;
 
 /*
 CONCRETE DECORATOR
-    
 */
 public class Milk extends CondimentDecorator {
     private static final float COST = 0.50f;
     
+    public Milk(Beverage beverage) {
+        this.beverage = beverage;
+        
+        description = ", Milk";
+    }
+    
     @Override
     public String getDescription() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return beverage.getDescription() + description;
     }
 
     @Override
     public float cost() {
-        return COST + beverage.cost();
+        return beverage.cost() + COST;
     }
     
 }
