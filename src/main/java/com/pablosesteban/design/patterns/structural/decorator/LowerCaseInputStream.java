@@ -15,15 +15,37 @@ import java.io.InputStream;
  */
 
 /*
-DECORATOR that converts all uppercase characters to lowercase in the input stream
+CONCRETE DECORATOR that converts all uppercase characters to lowercase in the input stream
+
+FilterInputStream is the ABSTRACT DECORATOR
 */
 public class LowerCaseInputStream extends FilterInputStream {
     public LowerCaseInputStream(InputStream is) {
+        // COMPOSITION (handling by the abstract decorator)
         super(is);
     }
     
     @Override
     public int read() throws IOException {
-        return 0;
+        // DELEGATION
+        char c = (char) super.read();
+        
+        return c == -1 ? c : Character.toLowerCase(c);
     }
+
+    @Override
+    public int read(byte[] b, int off, int len) throws IOException {
+        int numberOfBytes = super.read(b, off, len);
+        
+        for(int i = 0; i < len; i++) {
+            
+        }
+    }
+
+    @Override
+    public int read(byte[] b) throws IOException {
+        return super.read(b); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
 }
