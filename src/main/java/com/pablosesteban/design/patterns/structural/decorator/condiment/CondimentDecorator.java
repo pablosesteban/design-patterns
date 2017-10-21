@@ -16,9 +16,9 @@ import com.pablosesteban.design.patterns.structural.decorator.beverage.Beverage;
 DECORATOR INTERFACE
     decorators need the same “interface” (supertype) as the components they wrap because they need to stand in place of the component
 
-    we’re using inheritance to achieve the type matching not to get behavior
+    using inheritance to achieve the type matching not to get behavior
 
-    we get behavior by composing decorators together
+    getting behavior by composing decorators together
 
     decorator adds its own behavior either before and/or after delegating to the object it decorates to do the rest of the job
 

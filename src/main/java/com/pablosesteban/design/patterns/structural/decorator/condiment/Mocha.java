@@ -34,15 +34,19 @@ public class Mocha extends CondimentDecorator {
         description = ", Mocha";
     }
     
+    /*
+    DELEGATION
+        first DELEGATE the call to the object we are decorating to get its description, then append its own description
+    
+        first DELEGATE the call to the object we are decorating to get its cost, then add its own cost
+    */
     @Override
     public String getDescription() {
-        // first DELEGATE the call to the object we are decorating to get its description, then append its own description
         return beverage.getDescription() + description;
     }
 
     @Override
     public float cost() {
-        // first, DELEGATE the call to the object we are decorating to get its cost, then add its own cost
         return beverage.cost() + COST;
     }
     

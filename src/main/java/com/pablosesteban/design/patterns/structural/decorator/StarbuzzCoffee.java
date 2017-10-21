@@ -22,9 +22,9 @@ DESIGN PATTERN: DECORATOR
 
     decorators provide a flexible alternative to subclassing for extending functionality
 
-    we are using inheritance to achieve the type matching of the decorators (same as component) not to inherit its behavior
+    uses inheritance to achieve the type matching of the decorators (same as component) not to inherit its behavior
 
-    we are using composition to add new functionality at runtime
+    uses composition to add new functionality at runtime
 
     if we rely on inheritance to get the behavior
         it can only be determined statically at compile time

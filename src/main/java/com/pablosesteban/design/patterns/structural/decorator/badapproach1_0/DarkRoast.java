@@ -3,20 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.pablosesteban.design.patterns.structural.decorator.version1_0;
+package com.pablosesteban.design.patterns.structural.decorator.badapproach1_0;
 
 /**
  *
  * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
  */
-public class DarkRoastWithSteamedMilkAndMocha extends Beverage {
-    public DarkRoastWithSteamedMilkAndMocha() {
-        description = "Dark Roast Coffee with Steamed Milk and Mocha";
+public class DarkRoast extends Beverage {
+    public DarkRoast() {
+        description = "Dark Roast Coffee";
     }
     
     @Override
     public float cost() {
-        return 2.99f;
+        return 0.99f;
     }
     
 }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.pablosesteban.design.patterns.structural.decorator.version1_0;
+package com.pablosesteban.design.patterns.structural.decorator.badapproach1_0;
 
 /**
  *
