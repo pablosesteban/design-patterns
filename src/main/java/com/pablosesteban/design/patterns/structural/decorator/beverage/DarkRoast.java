@@ -12,6 +12,9 @@ package com.pablosesteban.design.patterns.structural.decorator.beverage;
 
 /*
 CONCRETE COMPONENT
+    is the object we are going to dynamically add new behavior to
+
+    the object which is going to be wrapped (decorated) by a decorator
 */
 public class DarkRoast extends Beverage {
     private static final float COST = 0.99f;

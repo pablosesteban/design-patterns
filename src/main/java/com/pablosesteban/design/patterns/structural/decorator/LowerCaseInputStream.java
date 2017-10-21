@@ -40,6 +40,8 @@ public class LowerCaseInputStream extends FilterInputStream {
         for(int i = 0; i < len; i++) {
             
         }
+        
+        return 0;
     }
 
     @Override

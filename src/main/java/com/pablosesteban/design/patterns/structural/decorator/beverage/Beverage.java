@@ -12,27 +12,15 @@ package com.pablosesteban.design.patterns.structural.decorator.beverage;
 
 /*
 COMPONENT INTERFACE
+    each component can be used on its own or wrapped by a decorator (same interface)
 */
 public abstract class Beverage {
-    public enum Size {
-        SMALL, MEDIUM, LARGE;
-    }
-    
-    protected Size size;
     protected String description;
     
     public String getDescription() {
         return description;
     }
 
-    public Size getSize() {
-        return size;
-    }
-
-    public void setSize(Size size) {
-        this.size = size;
-    }
-    
     public abstract float cost();
     
 }

@@ -11,10 +11,6 @@ import com.pablosesteban.design.patterns.structural.decorator.beverage.Beverage;
  *
  * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
  */
-
-/*
-CONCRETE DECORATOR
-*/
 public class Steamed extends CondimentDecorator {
     private static final float COST = 0.50f;
     

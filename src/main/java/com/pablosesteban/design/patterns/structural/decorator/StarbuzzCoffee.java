@@ -15,8 +15,38 @@ import com.pablosesteban.design.patterns.structural.decorator.condiment.Steamed;
  *
  * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
  */
+
+/*
+DESIGN PATTERN: DECORATOR
+    ataches additional resposibilities to an object dynamically
+
+    decorators provide a flexible alternative to subclassing for extending functionality
+
+    we are using inheritance to achieve the type matching of the decorators (same as component) not to inherit its behavior
+
+    we are using composition to add new functionality at runtime
+
+    if we rely on inheritance to get the behavior
+        it can only be determined statically at compile time
+        
+        we get only behavior the superclass gives us or that we override
+        
+        to add new behavior we have to change the existing code
+
+DESIGN PRINCIPLE: classes should be opened for extension, but closed for modification
+    classes must allow extends our classes with any new behavior, but without altering the existing code
+
+    the goal is to allow classes to be easily extended to incorporate new behavior without modifying existing code
+
+    following this principle usually introduces new levels of abstraction, which adds complexity to the code, so concentrate
+    on those areas that are most likely to change in your designs and apply the principles there
+*/
 public class StarbuzzCoffee {
     public static void main(String[] args) {
+        /*
+        a better way of creating decorated objects is using the Factory and Builder patterns where the creation of
+        the concrete component with its decorator is well encapsulated
+        */
         Beverage darkRoast = new DarkRoast();
         System.out.println(darkRoast.getDescription() + ": " + darkRoast.cost());
         

@@ -25,7 +25,12 @@ DECORATOR INTERFACE
     objects can be decorated at any time, so we can decorate objects dynamically at runtime with as many decorators as we like
 */
 public abstract class CondimentDecorator extends Beverage {
-    // COMPOSITION: instance variable to hold the beverage concrete decorators are wrapping
+    /*
+    COMPOSITION
+        instance variable to hold the beverage which concrete decorators are wrapping (decorating)
+    
+        each decorator has (wraps) a component
+    */
     protected Beverage beverage;
     
     // to require that the concrete decorators all re-implement the getDescription() method

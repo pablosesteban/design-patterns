@@ -14,6 +14,9 @@ import com.pablosesteban.design.patterns.structural.decorator.beverage.Beverage;
 
 /*
 CONCRETE DECORATOR
+    can extend the state (instance variables) of the component
+
+    can add new functionality (methods) to the component
 */
 public class Mocha extends CondimentDecorator {
     private static final float COST = 0.50f;
