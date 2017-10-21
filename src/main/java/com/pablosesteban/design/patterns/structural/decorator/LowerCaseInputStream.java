@@ -59,7 +59,7 @@ public class LowerCaseInputStream extends FilterInputStream {
         return numberOfBytes;
     }
     
-    // this method calls the above one in this way read(b, 0, b.length) so there is no need to override it!
+    // this method calls the above one in the way read(b, 0, b.length) so there is no need to override it!
     @Override
     public int read(byte[] b) throws IOException {
         return super.read(b);
@@ -69,14 +69,24 @@ public class LowerCaseInputStream extends FilterInputStream {
     public static void main(String[] args) {
         int c = 0;
         
+        InputStream is = null;
         try {
-            InputStream is = new LowerCaseInputStream(new BufferedInputStream(new FileInputStream("src/main/resources/test.txt")));
+            is = new LowerCaseInputStream(new BufferedInputStream(new FileInputStream("src/main/resources/test.txt")));
             
             while ((c = is.read()) >= 0) {
                 System.out.print((char)c);
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        } finally {
+            if (is != null) {
+                try {
+                    is.close();
+                } catch (IOException ioe) {
+                    ioe.printStackTrace();
+                }
+                
+            }
         }
     }
 }
