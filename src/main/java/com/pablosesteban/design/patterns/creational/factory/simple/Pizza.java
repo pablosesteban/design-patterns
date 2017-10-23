@@ -11,8 +11,17 @@ package com.pablosesteban.design.patterns.creational.factory.simple;
  */
 public abstract class Pizza {
     public abstract void prepare();
-    public abstract void bake();
-    public abstract void cut();
-    public abstract void box();
+    
+    public void bake() {
+        
+    }
+    
+    public void cut() {
+        
+    }
+    
+    public void box() {
+        
+    }
     
 }
