@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.pablosesteban.design.patterns.creational.factory.simple;
+package com.pablosesteban.design.patterns.creational.factory.simpleFactory;
+
+import com.pablosesteban.design.patterns.creational.factory.product.Pizza;
 
 /**
  *
