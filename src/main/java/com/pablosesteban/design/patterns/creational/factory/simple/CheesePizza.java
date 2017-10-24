@@ -9,10 +9,15 @@ package com.pablosesteban.design.patterns.creational.factory.simple;
  *
  * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
  */
+
+/*
+CONCRETE PRODUCT
+    needs to implement the product interface so it can be created by the factory and handed back to the client
+*/
 public class CheesePizza extends Pizza {
     @Override
     public void prepare() {
-        System.out.println("Cheese Pizza!");
+        System.out.println("Preparing Cheese Pizza...");
     }
     
 }
