@@ -3,16 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.pablosesteban.design.patterns.creational.factory.product;
+package com.pablosesteban.design.patterns.creational.factory.simpleFactory.product;
 
 /**
  *
  * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
  */
-public class NYStylePepperoniPizza extends Pizza {
+
+/*
+CONCRETE PRODUCT
+    needs to implement the product interface so it can be created by the factory and handed back to the client
+*/
+public class CheesePizza extends Pizza {
     @Override
     public void prepare() {
-        System.out.println("Preparing New York Style Pepperoni Pizza...");
+        System.out.println("Preparing Cheese Pizza...");
     }
     
 }

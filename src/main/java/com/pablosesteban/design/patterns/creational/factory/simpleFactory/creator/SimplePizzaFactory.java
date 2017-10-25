@@ -3,11 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.pablosesteban.design.patterns.creational.factory.simpleFactory;
+package com.pablosesteban.design.patterns.creational.factory.simpleFactory.creator;
 
-import com.pablosesteban.design.patterns.creational.factory.product.PepperoniPizza;
-import com.pablosesteban.design.patterns.creational.factory.product.Pizza;
-import com.pablosesteban.design.patterns.creational.factory.product.CheesePizza;
+import com.pablosesteban.design.patterns.creational.factory.simpleFactory.product.PepperoniPizza;
+import com.pablosesteban.design.patterns.creational.factory.simpleFactory.product.Pizza;
+import com.pablosesteban.design.patterns.creational.factory.simpleFactory.product.CheesePizza;
+import com.pablosesteban.design.patterns.creational.factory.simpleFactory.product.CheesePizza;
+import com.pablosesteban.design.patterns.creational.factory.simpleFactory.product.PepperoniPizza;
+import com.pablosesteban.design.patterns.creational.factory.simpleFactory.product.Pizza;
 
 /**
  *
@@ -15,16 +18,20 @@ import com.pablosesteban.design.patterns.creational.factory.product.CheesePizza;
  */
 
 /*
-SIMPLE FACTORY
-    the Simple Factory isn’t actually a Design Pattern, it’s more of a programming idiom
+"DESIGN PATTERN: SIMPLE FACTORY"
+    all factory patterns encapsulate object creation but in different ways
+
+    this "pattern" encapsulates object creation by letting the simple factory class decide what objects to create
+
+    it isn’t actually a design pattern, it’s more of a programming idiom
     
     factories handle the details of object creation
-
-    is only going to be concerned with creating pizzas
 */
 public class SimplePizzaFactory {
     /*
     code which is going to vary (add/delete kinds of pizza)
+    
+    separating the store and the pizza creation, so this class is only going to be concerned with creating pizzas
     
     several concrete classes to be instantiated and the decision of which to instantiate is made at runtime depending on some set of conditions
     
@@ -37,7 +44,7 @@ public class SimplePizzaFactory {
     
     we now have only one place to make modifications when the implementation changes
    
-    the method all clients will use to instantiate new pizzas
+    this is the method all clients will use to instantiate new pizzas
     
     this method can be STATIC and is a common technique (static factory)
         you don’t need to instantiate an object to make use of it
@@ -62,4 +69,5 @@ public class SimplePizzaFactory {
         
         return p;
     }
+    
 }

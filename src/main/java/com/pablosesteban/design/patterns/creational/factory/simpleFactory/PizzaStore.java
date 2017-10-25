@@ -5,7 +5,8 @@
  */
 package com.pablosesteban.design.patterns.creational.factory.simpleFactory;
 
-import com.pablosesteban.design.patterns.creational.factory.product.Pizza;
+import com.pablosesteban.design.patterns.creational.factory.simpleFactory.creator.SimplePizzaFactory;
+import com.pablosesteban.design.patterns.creational.factory.simpleFactory.product.Pizza;
 
 /**
  *
@@ -14,7 +15,7 @@ import com.pablosesteban.design.patterns.creational.factory.product.Pizza;
 
 /*
 CLIENT
-    just becomes a client of the factory object
+    this class just becomes a client of the simple factory object
     
     any time it needs a pizza it asks the pizza factory to make one
     

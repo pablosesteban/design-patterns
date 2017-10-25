@@ -3,17 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.pablosesteban.design.patterns.creational.factory.factoryMethod;
+package com.pablosesteban.design.patterns.creational.factory.factoryMethod.creator;
 
-import com.pablosesteban.design.patterns.creational.factory.product.ChicagoStyleCheesePizza;
-import com.pablosesteban.design.patterns.creational.factory.product.ChicagoStylePepperoniPizza;
-import com.pablosesteban.design.patterns.creational.factory.product.Pizza;
+import com.pablosesteban.design.patterns.creational.factory.factoryMethod.product.ChicagoStyleCheesePizza;
+import com.pablosesteban.design.patterns.creational.factory.factoryMethod.product.ChicagoStylePepperoniPizza;
+import com.pablosesteban.design.patterns.creational.factory.factoryMethod.product.Pizza;
 
 /**
  *
  * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
  */
-public class ChicagoStylePizzaStore extends PizzaStore {
+public class ChicagoStylePizzaStore extends AbstractPizzaStore {
     @Override
     protected Pizza createPizza(String type) {
         Pizza p = null;
