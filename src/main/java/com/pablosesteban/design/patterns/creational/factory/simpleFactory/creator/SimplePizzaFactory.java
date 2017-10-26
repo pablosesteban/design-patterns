@@ -5,9 +5,6 @@
  */
 package com.pablosesteban.design.patterns.creational.factory.simpleFactory.creator;
 
-import com.pablosesteban.design.patterns.creational.factory.simpleFactory.product.PepperoniPizza;
-import com.pablosesteban.design.patterns.creational.factory.simpleFactory.product.Pizza;
-import com.pablosesteban.design.patterns.creational.factory.simpleFactory.product.CheesePizza;
 import com.pablosesteban.design.patterns.creational.factory.simpleFactory.product.CheesePizza;
 import com.pablosesteban.design.patterns.creational.factory.simpleFactory.product.PepperoniPizza;
 import com.pablosesteban.design.patterns.creational.factory.simpleFactory.product.Pizza;
@@ -20,20 +17,16 @@ import com.pablosesteban.design.patterns.creational.factory.simpleFactory.produc
 /*
 "DESIGN PATTERN: SIMPLE FACTORY"
     all factory patterns encapsulate object creation but in different ways
+    
+    factories handle the details of object creation
 
     this "pattern" encapsulates object creation by letting the simple factory class decide what objects to create
 
     it isn’t actually a design pattern, it’s more of a programming idiom
-    
-    factories handle the details of object creation
 */
 public class SimplePizzaFactory {
     /*
-    code which is going to vary (add/delete kinds of pizza)
-    
-    separating the store and the pizza creation, so this class is only going to be concerned with creating pizzas
-    
-    several concrete classes to be instantiated and the decision of which to instantiate is made at runtime depending on some set of conditions
+    code which is going to vary
     
     if you don't encapsulates this kind of code, it ends up in several parts of the application making maintenance and updates more difficult and error-prone
     
@@ -44,7 +37,7 @@ public class SimplePizzaFactory {
     
     we now have only one place to make modifications when the implementation changes
    
-    this is the method all clients will use to instantiate new pizzas
+    this is the method all clients will use to instantiate new concrete products
     
     this method can be STATIC and is a common technique (static factory)
         you don’t need to instantiate an object to make use of it

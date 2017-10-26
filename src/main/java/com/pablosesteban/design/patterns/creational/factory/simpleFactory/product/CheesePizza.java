@@ -12,7 +12,7 @@ package com.pablosesteban.design.patterns.creational.factory.simpleFactory.produ
 
 /*
 CONCRETE PRODUCT
-    needs to implement the product interface so it can be created by the factory and handed back to the client
+    needs to implement the abstract product interface so it can be created by the factory and handed back to the client
 */
 public class CheesePizza extends Pizza {
     @Override

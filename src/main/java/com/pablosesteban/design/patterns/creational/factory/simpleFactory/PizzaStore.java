@@ -19,7 +19,7 @@ CLIENT
     
     any time it needs a pizza it asks the pizza factory to make one
     
-    doesn't care about the kind of pizzas, just cares that it gets a pizza, which implements the Pizza interface so that it can call prepare(), bake(), cut(), and box()
+    doesn't care about the kind of the concrete product, just cares that it gets a concrete product, which implements the abstract product interface
 */
 public class PizzaStore {
     SimplePizzaFactory factory;
@@ -29,7 +29,7 @@ public class PizzaStore {
     }
     
     public Pizza orderPizza(String type) {
-        // instead of having the code of instantiating the concrete pizza (code that varies) here, call the factory to do that
+        // instead of having the code of instantiating the concrete product (code that varies) here, call the factory to do that
         Pizza p = factory.createPizza(type);
         
         // don’t expect this code to change
@@ -48,4 +48,5 @@ public class PizzaStore {
         pizzaStore.orderPizza("pepperoni");
         pizzaStore.orderPizza("barbecue");
     }
+    
 }
