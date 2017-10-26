@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 /*
 ABSTRACT PRODUCT
-    this is the product of the factory
+    this is the product of the factory method
 
     abstract product for all products
 */

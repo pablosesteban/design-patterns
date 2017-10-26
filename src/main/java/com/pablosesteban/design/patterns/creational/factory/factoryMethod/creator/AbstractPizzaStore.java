@@ -15,11 +15,15 @@ import com.pablosesteban.design.patterns.creational.factory.factoryMethod.produc
 /*
 CLIENT
     this class just becomes a client of the factory method
+    
+    any time it needs a product it asks the factory method to make one
+    
+    doesn't care about the kind of the concrete product, just cares that it gets a concrete product, which implements the abstract product interface
 */
 
 /*
-abstract class (franchise)
-    to create a framework that ties the store and the pizza creation together, yet still allows things to remain flexible
+ABSTRACT CREATOR (franchise)
+    defines an abstract factory method that the subclasses implement to produce products
     
     createPizza method is back to being a call to a method in the PizzaStore rather than on a simple factory object
 */

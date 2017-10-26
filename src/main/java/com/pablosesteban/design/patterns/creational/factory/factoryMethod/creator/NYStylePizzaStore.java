@@ -23,13 +23,23 @@ DESIGN PATTERN: FACTORY METHOD
     gone from having an object handle the instantiation of our concrete classes (simple factory) to a set of subclasses that are now taking on that responsibility
     
     all the responsibility for instantiating the product has been moved into a method that acts as a factory
+    
+    creates a framework that ties the store and the pizza creation together, yet still allows things to remain flexible
+
+    as a framework this pattern generates parallel class hierarchies (procucts and creators):
+        both have abstract classes that are extended by concrete classes
+
+        it encapsulates product knowledge into each creator, i.e. each subclass of the abstract creator encapsulates all the knowledge
+        about how to create a subset of subclasses of the abstract product
+        
+        the factory method is the key to encapsulating this knowledge
 */
 
 /*
-subclass (regional store):
-    isn't really “deciding” anything about what kind of pizza style is made, it was you who decided by choosing which store you wanted
-    
+CONCRETE CREATOR (regional store):
     is fully responsible for which concrete product it instantiates, so it has to implements the factory method for creating the product
+
+    isn't really “deciding” anything about what kind of pizza style is made, it was you who decided by choosing which store you wanted
 */
 public class NYStylePizzaStore extends AbstractPizzaStore {
     @Override

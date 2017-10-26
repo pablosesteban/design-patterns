@@ -17,7 +17,7 @@ import com.pablosesteban.design.patterns.creational.factory.simpleFactory.produc
 CLIENT
     this class just becomes a client of the simple factory object
     
-    any time it needs a pizza it asks the pizza factory to make one
+    any time it needs a pizza it asks the simple factory to make one
     
     doesn't care about the kind of the concrete product, just cares that it gets a concrete product, which implements the abstract product interface
 */

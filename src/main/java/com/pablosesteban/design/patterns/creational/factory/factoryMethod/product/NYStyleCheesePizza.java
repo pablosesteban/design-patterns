@@ -12,7 +12,7 @@ package com.pablosesteban.design.patterns.creational.factory.factoryMethod.produ
 
 /*
 CONCRETE PRODUCT
-    needs to implement the product interface so it can be created by the factory and handed back to the client
+    needs to implement the product interface so it can be created by the factory method and handed back to the client
 */
 public class NYStyleCheesePizza extends Pizza {
     public NYStyleCheesePizza() {
