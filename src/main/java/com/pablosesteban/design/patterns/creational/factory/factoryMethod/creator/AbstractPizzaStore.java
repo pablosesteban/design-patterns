@@ -28,6 +28,8 @@ ABSTRACT CREATOR (franchise)
     contains the implementations for all of the methods to manipulate products, except for the factory method
     
     createPizza method is back to being a call to a method in the PizzaStore rather than on a simple factory object
+
+    high-level component as its behavior is defined in terms of pizzas and uses the Pizza abstraction to achieve DI
 */
 public abstract class AbstractPizzaStore {
     /*

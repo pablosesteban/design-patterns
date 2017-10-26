@@ -42,6 +42,17 @@ DESIGN PATTERN: FACTORY METHOD
    
     you can define the abstract creator as not abstract and a default factory method (not abstract) to produce some concrete product,
     then you always have a means of creating products even if there are no subclasses of the abstract creator
+
+    is not the only technique for adhering to the "Dependency Inversion Principle", but it is one of the more powerful ones
+*/
+
+/*
+DESIGN PRINCIPLE: depend upon abstractions, not upon concrete classes (Dependency Inversion)
+    makes an even stronger statement about abstraction than "program to an interface, not to an implementation" principle
+
+    suggests that our high-level components should not depend on our low-level components; rather, they should both depend on abstractions
+
+    a "high-level" component is a class with behavior defined in terms of other, "low level" components
 */
 
 /*

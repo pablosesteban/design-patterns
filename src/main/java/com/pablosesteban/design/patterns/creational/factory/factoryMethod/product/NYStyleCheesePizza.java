@@ -13,6 +13,8 @@ package com.pablosesteban.design.patterns.creational.factory.factoryMethod.produ
 /*
 CONCRETE PRODUCT
     needs to implement the product interface so it can be created by the factory method and handed back to the client
+
+    "low-level" component and it extends Pizza abstraction to achieve DI
 */
 public class NYStyleCheesePizza extends Pizza {
     public NYStyleCheesePizza() {
