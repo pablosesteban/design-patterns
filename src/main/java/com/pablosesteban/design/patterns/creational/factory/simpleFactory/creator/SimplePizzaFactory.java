@@ -24,6 +24,11 @@ import com.pablosesteban.design.patterns.creational.factory.simpleFactory.produc
 
     it isn’t actually a design pattern, it’s more of a programming idiom
 */
+
+/*
+CREATOR
+    handles the instantiation of the concrete products
+*/
 public class SimplePizzaFactory {
     /*
     code which is going to vary
