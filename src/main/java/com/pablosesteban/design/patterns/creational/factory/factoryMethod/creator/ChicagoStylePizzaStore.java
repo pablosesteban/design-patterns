@@ -13,6 +13,11 @@ import com.pablosesteban.design.patterns.creational.factory.factoryMethod.produc
  *
  * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
  */
+
+/*
+CONCRETE CREATOR (regional store):
+    is fully responsible for which concrete product it instantiates, so it has to implements the factory method for creating the product
+*/
 public class ChicagoStylePizzaStore extends AbstractPizzaStore {
     @Override
     protected Pizza createPizza(String type) {

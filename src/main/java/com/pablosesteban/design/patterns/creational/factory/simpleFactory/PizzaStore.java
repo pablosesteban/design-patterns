@@ -22,6 +22,7 @@ CLIENT
     doesn't care about the kind of the concrete product, just cares that it gets a concrete product, which implements the abstract product interface
 */
 public class PizzaStore {
+    // COMPOSITION
     SimplePizzaFactory factory;
     
     public PizzaStore(SimplePizzaFactory factory) {

@@ -17,6 +17,8 @@ import com.pablosesteban.design.patterns.creational.factory.factoryMethod.produc
 /*
 DESIGN PATTERN: FACTORY METHOD
     all factory patterns encapsulate object creation but in different ways
+    
+    defines an interface for creating an object, but lets subclasses decide which class to instantiate through a Factory Method that lets a class defer instantiation to subclasses
 
     this pattern encapsulates object creation by letting subclasses decide what objects to create
     
@@ -33,13 +35,18 @@ DESIGN PATTERN: FACTORY METHOD
         about how to create a subset of subclasses of the abstract product
         
         the factory method is the key to encapsulating this knowledge
+
+    it is said that subclasses of abstract creator “decides” which class to instantiate:
+        not because the pattern allows subclasses themselves to decide at runtime, but because the creator class is written without
+        knowledge of the actual products that will be created, which is decided purely by the choice of the subclass that is used
+   
+    you can define the abstract creator as not abstract and a default factory method (not abstract) to produce some concrete product,
+    then you always have a means of creating products even if there are no subclasses of the abstract creator
 */
 
 /*
 CONCRETE CREATOR (regional store):
     is fully responsible for which concrete product it instantiates, so it has to implements the factory method for creating the product
-
-    isn't really “deciding” anything about what kind of pizza style is made, it was you who decided by choosing which store you wanted
 */
 public class NYStylePizzaStore extends AbstractPizzaStore {
     @Override

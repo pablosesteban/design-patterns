@@ -24,6 +24,8 @@ CLIENT
 /*
 ABSTRACT CREATOR (franchise)
     defines an abstract factory method that the subclasses implement to produce products
+
+    contains the implementations for all of the methods to manipulate products, except for the factory method
     
     createPizza method is back to being a call to a method in the PizzaStore rather than on a simple factory object
 */
@@ -61,6 +63,8 @@ public abstract class AbstractPizzaStore {
             isolates the client (the code in the superclass, like orderPizza()) from knowing what kind of concrete product is actually created
             
             may be parameterized (or not) to select among several variations of a product
+    
+        any other methods implemented are written to operate on products produced by the factory method
     */
     protected abstract Pizza createPizza(String type);
     
