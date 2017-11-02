@@ -17,6 +17,11 @@ ABSTRACT PRODUCT
     this is the product of the factory method
 
     abstract product for all products
+
+    this is the key interface to apply the DI principle:
+        high-level components use this abstraction to define its behavior
+
+        low-level components extends this abstraction to define itselfs
 */
 public abstract class Pizza {
     protected String name;
