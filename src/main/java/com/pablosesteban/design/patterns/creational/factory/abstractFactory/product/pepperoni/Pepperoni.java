@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.pablosesteban.design.patterns.creational.factory.abstractFactory.product;
+package com.pablosesteban.design.patterns.creational.factory.abstractFactory.product.pepperoni;
 
 /**
  *
  * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
  */
-public interface Sauce {
-    
+public interface Pepperoni {
+    String getName();
 }

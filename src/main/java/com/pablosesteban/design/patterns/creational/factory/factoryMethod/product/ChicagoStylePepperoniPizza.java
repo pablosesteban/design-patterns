@@ -19,9 +19,9 @@ CONCRETE PRODUCT
 public class ChicagoStylePepperoniPizza extends Pizza {
     public ChicagoStylePepperoniPizza() {
         name = "Chicago Style Pepperoni Pizza";
-        dough = "Extra Thick Crust Dough";
-        sauce = "Plum Tomato Sauce";
-        toppings.add("Shredded Mozzarella Cheese");
+        dough = "Thick Crust Dough";
+        sauce = "Tomato Sauce";
+        toppings.add("Sliced Pepperoni");
     }
     
 }

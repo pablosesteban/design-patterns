@@ -3,12 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.pablosesteban.design.patterns.creational.factory.abstractFactory.product;
+package com.pablosesteban.design.patterns.creational.factory.abstractFactory.product.cheese;
 
 /**
  *
  * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
  */
-public interface Cheese {
+public class MozzarellaCheese implements Cheese {
+    private final String name = "Mozzarella Cheese";
+    
+    public String getName() {
+        return name;
+    }
     
 }

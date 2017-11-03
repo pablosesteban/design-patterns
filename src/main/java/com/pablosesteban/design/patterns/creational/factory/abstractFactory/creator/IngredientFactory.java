@@ -5,10 +5,10 @@
  */
 package com.pablosesteban.design.patterns.creational.factory.abstractFactory.creator;
 
-import com.pablosesteban.design.patterns.creational.factory.abstractFactory.product.Cheese;
-import com.pablosesteban.design.patterns.creational.factory.abstractFactory.product.Dough;
-import com.pablosesteban.design.patterns.creational.factory.abstractFactory.product.Pepperoni;
-import com.pablosesteban.design.patterns.creational.factory.abstractFactory.product.Sauce;
+import com.pablosesteban.design.patterns.creational.factory.abstractFactory.product.cheese.Cheese;
+import com.pablosesteban.design.patterns.creational.factory.abstractFactory.product.dough.Dough;
+import com.pablosesteban.design.patterns.creational.factory.abstractFactory.product.pepperoni.Pepperoni;
+import com.pablosesteban.design.patterns.creational.factory.abstractFactory.product.sauce.Sauce;
 
 /**
  *
