@@ -31,9 +31,9 @@ public abstract class Pizza {
     
     public void prepare() {
         System.out.println("Preparing " + name + "...");
-        System.out.println("Tossing " + dough + "...");
-        System.out.println("Adding " + sauce + "...");
-        System.out.print("Adding toppings: ");
+        System.out.println("\tTossing " + dough + "...");
+        System.out.println("\tAdding " + sauce + "...");
+        System.out.print("\tAdding toppings: ");
         for (int i = 0; i < toppings.size(); i++) {
             System.out.println(" " + toppings.get(i));
         }

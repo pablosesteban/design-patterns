@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.pablosesteban.design.patterns.creational.factory.abstractFactory;
+package com.pablosesteban.design.patterns.creational.factory.abstractFactory.product.pizza;
 
-import com.pablosesteban.design.patterns.creational.factory.abstractFactory.creator.IngredientFactory;
-import com.pablosesteban.design.patterns.creational.factory.abstractFactory.product.cheese.Cheese;
-import com.pablosesteban.design.patterns.creational.factory.abstractFactory.product.dough.Dough;
-import com.pablosesteban.design.patterns.creational.factory.abstractFactory.product.pepperoni.Pepperoni;
-import com.pablosesteban.design.patterns.creational.factory.abstractFactory.product.sauce.Sauce;
+import com.pablosesteban.design.patterns.creational.factory.abstractFactory.creator.ingredient.IngredientFactory;
+import com.pablosesteban.design.patterns.creational.factory.abstractFactory.product.ingredient.cheese.Cheese;
+import com.pablosesteban.design.patterns.creational.factory.abstractFactory.product.ingredient.dough.Dough;
+import com.pablosesteban.design.patterns.creational.factory.abstractFactory.product.ingredient.pepperoni.Pepperoni;
+import com.pablosesteban.design.patterns.creational.factory.abstractFactory.product.ingredient.sauce.Sauce;
 
 /**
  *
@@ -56,6 +56,10 @@ public abstract class Pizza {
     
     public String getName() {
         return name;
+    }
+    
+    public void setName(String name) {
+        this.name = name;
     }
     
 }

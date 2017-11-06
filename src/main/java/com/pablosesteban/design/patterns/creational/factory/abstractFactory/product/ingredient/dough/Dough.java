@@ -3,17 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.pablosesteban.design.patterns.creational.factory.abstractFactory.product.dough;
+package com.pablosesteban.design.patterns.creational.factory.abstractFactory.product.ingredient.dough;
 
 /**
  *
  * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
  */
-public class ThinCrustDough implements Dough {
-    private final String name = "Thin Crust Dough";
-    
-    public String getName() {
-        return name;
-    }
+
+/*
+ABSTRACT PRODUCT
+    the product family
+*/
+public interface Dough {
+    String getName();
     
 }

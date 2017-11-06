@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.pablosesteban.design.patterns.creational.factory.abstractFactory.product.pepperoni;
+package com.pablosesteban.design.patterns.creational.factory.abstractFactory.product.ingredient.dough;
 
 /**
  *
  * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
  */
-public class SlicedPepperoni implements Pepperoni {
-    private final String name = "Sliced Pepperoni";
+public class ThinCrustDough implements Dough {
+    private final String name = "Thin Crust Dough";
     
     public String getName() {
         return name;

@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.pablosesteban.design.patterns.creational.factory.abstractFactory;
+package com.pablosesteban.design.patterns.creational.factory.abstractFactory.product.pizza;
 
-import com.pablosesteban.design.patterns.creational.factory.abstractFactory.creator.IngredientFactory;
+import com.pablosesteban.design.patterns.creational.factory.abstractFactory.creator.ingredient.IngredientFactory;
 
 /**
  *
@@ -23,13 +23,13 @@ public class PepperoniPizza extends Pizza {
         System.out.println("Preparing " + name + "...");
         
         dough = factory.createDough();
-        System.out.println("Tossing " + dough.getName() + "...");
+        System.out.println("\tTossing " + dough.getName() + "...");
         
         sauce = factory.createSauce();
-        System.out.println("Adding " + sauce.getName() + "...");
+        System.out.println("\tAdding " + sauce.getName() + "...");
         
         pepperoni = factory.createPepperoni();
-        System.out.print("Adding " + pepperoni.getName() + "...");
+        System.out.println("\tAdding " + pepperoni.getName() + "...");
     }
     
 }

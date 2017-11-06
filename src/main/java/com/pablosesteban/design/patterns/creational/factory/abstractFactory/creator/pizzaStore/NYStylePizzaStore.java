@@ -3,11 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.pablosesteban.design.patterns.creational.factory.abstractFactory.creator;
+package com.pablosesteban.design.patterns.creational.factory.abstractFactory.creator.pizzaStore;
 
-import com.pablosesteban.design.patterns.creational.factory.factoryMethod.product.NYStyleCheesePizza;
-import com.pablosesteban.design.patterns.creational.factory.factoryMethod.product.NYStylePepperoniPizza;
-import com.pablosesteban.design.patterns.creational.factory.factoryMethod.product.Pizza;
+import com.pablosesteban.design.patterns.creational.factory.abstractFactory.creator.ingredient.NYIngredientFactory;
+import com.pablosesteban.design.patterns.creational.factory.abstractFactory.product.pizza.CheesePizza;
+import com.pablosesteban.design.patterns.creational.factory.abstractFactory.product.pizza.PepperoniPizza;
+import com.pablosesteban.design.patterns.creational.factory.abstractFactory.product.pizza.Pizza;
 
 /**
  *
@@ -60,15 +61,23 @@ CONCRETE CREATOR (regional store):
 public class NYStylePizzaStore extends AbstractPizzaStore {
     @Override
     protected Pizza createPizza(String type) {
+        // to produce the ingredients for all NY style pizzas
+        ingredientFactory = new NYIngredientFactory();
+        
         Pizza p = null;
         
+        // for each type of Pizza, we instantiate a new Pizza and give it the factory it needs to get its ingredients
         switch(type) {
             case "cheese":
-                p = new NYStyleCheesePizza();
+                p = new CheesePizza(ingredientFactory);
+                
+                p.setName("New York Style Cheese Pizza");
                 
                 break;
             case "pepperoni":
-                p = new NYStylePepperoniPizza();
+                p = new PepperoniPizza(ingredientFactory);
+                
+                p.setName("New York Style Pepperoni Pizza");
                 
                 break;
             default:

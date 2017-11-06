@@ -3,15 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.pablosesteban.design.patterns.creational.factory.abstractFactory.creator;
+package com.pablosesteban.design.patterns.creational.factory.abstractFactory.creator.pizzaStore;
 
-import com.pablosesteban.design.patterns.creational.factory.factoryMethod.product.Pizza;
+import com.pablosesteban.design.patterns.creational.factory.abstractFactory.creator.ingredient.IngredientFactory;
+import com.pablosesteban.design.patterns.creational.factory.abstractFactory.product.pizza.Pizza;
 
 /**
  *
  * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
  */
+
+/*
+CLIENT
+    the client is written against the abstract factory and then composed at runtime with an actual (concrete) factory
+*/
 public abstract class AbstractPizzaStore {
+    // COMPOSITION
     protected IngredientFactory ingredientFactory;
     
     public final Pizza orderPizza(String type) {
@@ -46,7 +53,14 @@ public abstract class AbstractPizzaStore {
     protected abstract Pizza createPizza(String type);
     
     public static void main(String[] args) {
+        AbstractPizzaStore nyStore = new NYStylePizzaStore();
+//        AbstractPizzaStore chicagoStore = new ChicagoStylePizzaStore();
         
+        Pizza pizza = nyStore.orderPizza("cheese");
+        System.out.println("Ethan ordered a " + pizza.getName() + "\n");
+        
+//        pizza = chicagoStore.orderPizza("cheese");
+//        System.out.println("Joel ordered a " + pizza.getName() + "\n");
     }
     
 }
