@@ -12,11 +12,6 @@ import com.pablosesteban.design.patterns.creational.factory.abstractFactory.prod
  *
  * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
  */
-
-/*
-CLIENT
-    the client is written against the abstract factory and then composed at runtime with an actual (concrete) factory
-*/
 public abstract class AbstractPizzaStore {
     // COMPOSITION
     protected IngredientFactory ingredientFactory;

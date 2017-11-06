@@ -17,15 +17,8 @@ import com.pablosesteban.design.patterns.creational.factory.abstractFactory.prod
  */
 
 /*
-ABSTRACT PRODUCT
-    this is the product of the factory method
-
-    abstract product for all products
-
-    this is the key interface to apply the DI principle:
-        high-level components use this abstraction to define its behavior
-
-        low-level components extends this abstraction to define itselfs
+CLIENT
+    the client of the abstract factory is written against it and then composed at runtime with an actual (concrete) factory
 */
 public abstract class Pizza {
     // COMPOSITION
