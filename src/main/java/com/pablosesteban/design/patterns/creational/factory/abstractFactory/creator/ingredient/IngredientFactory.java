@@ -19,7 +19,7 @@ import com.pablosesteban.design.patterns.creational.factory.abstractFactory.prod
 DESIGN PATTERN: ABSTRACT FACTORY
     provides an interface for creating families of related or dependent objects without specifying their concrete classes
     
-    allows a client to use an abstract interface to create a set of related products without knowing (or caring) about the concrete products that are actually produced
+    allows a client to use an abstract interface to create a set of related products without knowing (or caring) about the concrete products that are actually produced, using COMPOSITION
 
     the client is decoupled from any of the specifics of the concrete products
 
@@ -30,11 +30,14 @@ DESIGN PATTERN: ABSTRACT FACTORY
 
 /*
 ABSTRACT FACTORY
-   defines the interface that all concrete factories must implement, which consists of a set of methods for producing products
+    defines the interface that all concrete factories must implement, which consists of a set of methods for producing products
 
     if we’d had some common “machinery” to implement in each instance of factory, we could have made this an abstract class instead...
+
+    factory methods are a natural way to implement your product methods in your abstract factories
 */
 public interface IngredientFactory {
+    // FACTORY METHODS
     Dough createDough();
     Sauce createSauce();
     Cheese createCheese();

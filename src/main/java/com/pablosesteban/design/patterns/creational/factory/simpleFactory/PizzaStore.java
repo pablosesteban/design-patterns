@@ -30,7 +30,7 @@ public class PizzaStore {
     }
     
     public Pizza orderPizza(String type) {
-        // instead of having the code of instantiating the concrete product (code that varies) here, call the factory to do that
+        // DELEGATION: instead of having the code of instantiating the concrete product (code that varies) here, call the factory to do that
         Pizza p = factory.createPizza(type);
         
         // don’t expect this code to change

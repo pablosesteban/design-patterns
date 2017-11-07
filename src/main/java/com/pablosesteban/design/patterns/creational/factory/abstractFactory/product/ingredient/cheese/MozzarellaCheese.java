@@ -12,6 +12,7 @@ package com.pablosesteban.design.patterns.creational.factory.abstractFactory.pro
 public class MozzarellaCheese implements Cheese {
     private final String name = "Mozzarella Cheese";
     
+    @Override
     public String getName() {
         return name;
     }

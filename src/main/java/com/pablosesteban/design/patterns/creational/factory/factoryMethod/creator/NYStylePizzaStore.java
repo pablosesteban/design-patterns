@@ -20,7 +20,7 @@ DESIGN PATTERN: FACTORY METHOD
     
     defines an interface for creating an object, but lets subclasses decide which class to instantiate through a Factory Method that lets a class defer instantiation to subclasses
 
-    this pattern encapsulates object creation by letting subclasses decide what objects to create
+    this pattern encapsulates object creation by letting subclasses decide what objects to create, using INHERITANCE
     
     gone from having an object handle the instantiation of our concrete classes (simple factory) to a set of subclasses that are now taking on that responsibility
     
