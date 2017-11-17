@@ -34,6 +34,7 @@ public class SingletonRegistry {
     private static SingletonRegistry instance;
     private static final Map<String, SingletonRegistry> REGISTRY = new HashMap<>();
     
+    // in order to subclass the singleton the constructor MUST be PROTECTED
     protected SingletonRegistry() {};
     
     // looks up the corresponding singleton and, if it exists, returns it or, if there's no such singleton, returns null
@@ -78,12 +79,12 @@ public class SingletonRegistry {
     }
     
     public static void main(String[] args) {
-        SingletonRegistry instance1 = SingletonRegistry.getInstance("com.pablosesteban.design.patterns.creational.singleton.SingletonImpl1");
+        SingletonRegistry instance1 = SingletonRegistry.getInstance("com.pablosesteban.design.patterns.creational.singleton.SingletonRegistryImpl");
         
         new Thread(new Runnable() {
             @Override
             public void run() {
-                SingletonRegistry instance2 = SingletonRegistry.getInstance("com.pablosesteban.design.patterns.creational.singleton.SingletonImpl1");
+                SingletonRegistry instance2 = SingletonRegistry.getInstance("com.pablosesteban.design.patterns.creational.singleton.SingletonRegistryImpl");
                 
                 System.out.println("instance2: " + instance2);
             }

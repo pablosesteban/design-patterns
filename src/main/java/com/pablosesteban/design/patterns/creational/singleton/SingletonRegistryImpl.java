@@ -11,17 +11,17 @@ import java.util.logging.Logger;
  *
  * @author psantamartae
  */
-public class SingletonImpl1 extends SingletonRegistry {
+public class SingletonRegistryImpl extends SingletonRegistry {
     /*
     IMPLEMENTATION ISSUE: WHERE DO SINGLETON CLASSES REGISTER THEMSELVES
         a possibility is in their constructor
     
         the drawback is that instances of all possible Singleton subclasses must be created, or else they won't get registered
     */
-    protected SingletonImpl1() {
+    protected SingletonRegistryImpl() {
         register(this.getClass().getCanonicalName(), this);
         
-        Logger.getLogger(SingletonImpl1.class.getName()).info("Registered singleton " + SingletonImpl1.class.getName());
+        Logger.getLogger(SingletonRegistryImpl.class.getName()).info("Registered singleton " + SingletonRegistryImpl.class.getName());
     }
     
 }
