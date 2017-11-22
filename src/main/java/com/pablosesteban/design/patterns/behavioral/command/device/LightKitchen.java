@@ -9,27 +9,20 @@ package com.pablosesteban.design.patterns.behavioral.command.device;
  *
  * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
  */
-
-/*
-RECEIVER
-    knows how to perform the work needed to carry out the request
-
-    any class can act as a Receiver
-*/
-public class LightLivingRoom implements Light {
+public class LightKitchen implements Light {
     @Override
     public void on() {
-        System.out.println("Living Room Light ON");
+        System.out.println("Kitchen Light ON");
     }
 
     @Override
     public void off() {
-        System.out.println("Living Room Light OFF");
+        System.out.println("Kitchen Light OFF");
     }
 
     @Override
     public String toString() {
-        return "LightLivingRoom{" + '}';
+        return "LightKitchen{" + '}';
     }
     
 }

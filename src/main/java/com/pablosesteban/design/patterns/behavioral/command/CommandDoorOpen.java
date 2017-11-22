@@ -5,27 +5,27 @@
  */
 package com.pablosesteban.design.patterns.behavioral.command;
 
-import com.pablosesteban.design.patterns.behavioral.command.device.Light;
+import com.pablosesteban.design.patterns.behavioral.command.device.Door;
 
 /**
  *
  * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
  */
-public class CommandLightOn implements Command {
-    private Light light;
+public class CommandDoorOpen implements Command {
+    private Door door;
     
-    public void setLight(Light light) {
-        this.light = light;
+    public void setDoor(Door door) {
+        this.door = door;
     }
     
     @Override
     public void execute() {
-        light.on();
+        door.up();
     }
 
     @Override
     public String toString() {
-        return "CommandLightOn{" + "light=" + light + '}';
+        return "CommandDoorOpen{" + "door=" + door + '}';
     }
     
 }

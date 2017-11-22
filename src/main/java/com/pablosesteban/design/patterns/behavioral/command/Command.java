@@ -12,13 +12,9 @@ package com.pablosesteban.design.patterns.behavioral.command;
 
 /*
 COMMAND INTERFACE
-    all Command objects implement the same interface
+    declares an interface for all Commands
 
-    consists of a set of actions on a Receiver
-
-    contains one method (typically use the name execute) that encapsulates the actions and can be called to invoke the actions on the Receiver
-
-    the actions and the Receiver are bound together in this object
+    contains a method (typically called "execute") that encapsulates the actions and can be called to invoke the actions on the Receiver
 */
 public interface Command {
     void execute();
