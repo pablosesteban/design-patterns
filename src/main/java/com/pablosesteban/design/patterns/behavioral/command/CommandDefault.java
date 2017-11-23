@@ -25,6 +25,11 @@ public class CommandDefault implements Command {
     }
 
     @Override
+    public void undo() {
+        
+    }
+
+    @Override
     public String toString() {
         return "CommandDefault{" + '}';
     }

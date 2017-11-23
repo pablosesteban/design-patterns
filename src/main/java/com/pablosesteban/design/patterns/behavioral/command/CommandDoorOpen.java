@@ -24,6 +24,11 @@ public class CommandDoorOpen implements Command {
     }
 
     @Override
+    public void undo() {
+        door.down();
+    }
+
+    @Override
     public String toString() {
         return "CommandDoorOpen{" + "door=" + door + '}';
     }

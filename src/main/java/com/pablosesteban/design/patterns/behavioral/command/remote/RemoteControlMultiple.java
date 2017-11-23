@@ -25,6 +25,7 @@ import java.util.Arrays;
 public class RemoteControlMultiple {
     private Command[] onCommands;
     private Command[] offCommands;
+    private Command undoCommand;
     
     public RemoteControlMultiple(int devices) {
         onCommands = new Command[devices];
@@ -38,6 +39,8 @@ public class RemoteControlMultiple {
             
             offCommands[i] = commandDefault;
         }
+        
+        undoCommand = commandDefault;
     }
     
     public void setCommand(int slot, Command onCommand, Command offCommand) {
@@ -48,15 +51,23 @@ public class RemoteControlMultiple {
     
     public void onButtonPressed(int slot) {
         onCommands[slot].execute();
+        
+        undoCommand = onCommands[slot];
     }
     
     public void offButtonPressed(int slot) {
         offCommands[slot].execute();
+        
+        undoCommand = offCommands[slot];
     }
-
+    
+    public void undoButtonPressed() {
+        undoCommand.undo();
+    }
+    
     @Override
     public String toString() {
-        return "RemoteControlMultiple{" + "onCommands=" + Arrays.toString(onCommands) + ", offCommands=" + Arrays.toString(offCommands) + '}';
+        return "RemoteControlMultiple{" + "onCommands=" + Arrays.toString(onCommands) + ", offCommands=" + Arrays.toString(offCommands) + ", undoCommand=" + undoCommand + "}";
     }
     
     public static void main(String[] args) {
@@ -84,7 +95,12 @@ public class RemoteControlMultiple {
         
         remoteControlMultiple.onButtonPressed(2);
         remoteControlMultiple.offButtonPressed(1);
+        
+        remoteControlMultiple.undoButtonPressed();
+        
         remoteControlMultiple.offButtonPressed(0);
+        
+        remoteControlMultiple.undoButtonPressed();
         
         System.out.println(remoteControlMultiple);
     }

@@ -39,6 +39,11 @@ public class CommandLightOff implements Command {
     }
 
     @Override
+    public void undo() {
+        ligth.on();
+    }
+
+    @Override
     public String toString() {
         return "CommandLightOff{" + "ligth=" + ligth + '}';
     }
