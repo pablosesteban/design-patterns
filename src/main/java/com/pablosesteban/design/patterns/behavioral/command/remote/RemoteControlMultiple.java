@@ -6,6 +6,7 @@
 package com.pablosesteban.design.patterns.behavioral.command.remote;
 
 import com.pablosesteban.design.patterns.behavioral.command.Command;
+import com.pablosesteban.design.patterns.behavioral.command.CommandDefault;
 import com.pablosesteban.design.patterns.behavioral.command.CommandDoorClose;
 import com.pablosesteban.design.patterns.behavioral.command.CommandDoorOpen;
 import com.pablosesteban.design.patterns.behavioral.command.CommandLightOff;
@@ -29,6 +30,14 @@ public class RemoteControlMultiple {
         onCommands = new Command[devices];
         
         offCommands = new Command[devices];
+        
+        // in order not to deal with a NullPointerException when there are empty slots
+        CommandDefault commandDefault = new CommandDefault();
+        for (int i = 0; i < devices; i++) {
+            onCommands[i] = commandDefault;
+            
+            offCommands[i] = commandDefault;
+        }
     }
     
     public void setCommand(int slot, Command onCommand, Command offCommand) {
@@ -51,7 +60,7 @@ public class RemoteControlMultiple {
     }
     
     public static void main(String[] args) {
-        RemoteControlMultiple remoteControlMultiple = new RemoteControlMultiple(3);
+        RemoteControlMultiple remoteControlMultiple = new RemoteControlMultiple(5);
         
         DoorGarage doorGarage = new DoorGarage();
         CommandDoorOpen commandDoorGarageOpen = new CommandDoorOpen();

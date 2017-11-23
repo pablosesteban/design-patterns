@@ -34,7 +34,7 @@ public class CommandLightOff implements Command {
     // a Command is invoked through its execute() method, which asks a receiver to perform an action
     @Override
     public void execute() {
-        // causes the action(s) to be invoked on the receiver
+        // causes the actions (one or more methods) to be invoked on the receiver
         ligth.off();
     }
 

@@ -9,6 +9,11 @@ package com.pablosesteban.design.patterns.behavioral.command.device;
  *
  * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
  */
+
+/*
+VENDOR CLASSES
+    are used to perform the actual work
+*/
 public interface Light {
     void on();
     void off();
