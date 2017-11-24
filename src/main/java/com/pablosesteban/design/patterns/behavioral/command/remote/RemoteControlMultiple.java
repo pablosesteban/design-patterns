@@ -11,10 +11,11 @@ import com.pablosesteban.design.patterns.behavioral.command.CommandDoorClose;
 import com.pablosesteban.design.patterns.behavioral.command.CommandDoorOpen;
 import com.pablosesteban.design.patterns.behavioral.command.CommandLightOff;
 import com.pablosesteban.design.patterns.behavioral.command.CommandLightOn;
+import com.pablosesteban.design.patterns.behavioral.command.CommandMacro;
 import com.pablosesteban.design.patterns.behavioral.command.device.DoorGarage;
 import com.pablosesteban.design.patterns.behavioral.command.device.LightKitchen;
 import com.pablosesteban.design.patterns.behavioral.command.device.LightLivingRoom;
-import java.util.Arrays;
+import java.util.Stack;
 
 /**
  *
@@ -25,7 +26,12 @@ import java.util.Arrays;
 public class RemoteControlMultiple {
     private Command[] onCommands;
     private Command[] offCommands;
-    private Command undoCommand;
+    /*
+    in order ot implement a history of undo operations, i.e. to be able to press the undo button multiple times
+    
+    instead of keeping just a reference to the last Command executed, keeping a stack of previous Commands
+    */
+    private Stack<Command> undoCommand;
     
     public RemoteControlMultiple(int devices) {
         onCommands = new Command[devices];
@@ -40,7 +46,9 @@ public class RemoteControlMultiple {
             offCommands[i] = commandDefault;
         }
         
-        undoCommand = commandDefault;
+        undoCommand = new Stack<>();
+        // not really needed but to use the null object "design pattern"
+        undoCommand.push(commandDefault);
     }
     
     public void setCommand(int slot, Command onCommand, Command offCommand) {
@@ -52,22 +60,44 @@ public class RemoteControlMultiple {
     public void onButtonPressed(int slot) {
         onCommands[slot].execute();
         
-        undoCommand = onCommands[slot];
+        undoCommand.push(onCommands[slot]);
     }
     
     public void offButtonPressed(int slot) {
         offCommands[slot].execute();
         
-        undoCommand = offCommands[slot];
+        undoCommand.push(offCommands[slot]);
     }
     
     public void undoButtonPressed() {
-        undoCommand.undo();
+        if (!undoCommand.isEmpty()) {
+            undoCommand.pop().undo();
+        }
     }
     
     @Override
     public String toString() {
-        return "RemoteControlMultiple{" + "onCommands=" + Arrays.toString(onCommands) + ", offCommands=" + Arrays.toString(offCommands) + ", undoCommand=" + undoCommand + "}";
+        StringBuilder sb = new StringBuilder();
+        
+        sb.append("RemoteControlMultiple{\n");
+        int i = 0;
+        for (; i < onCommands.length; i++) {
+            sb.append("\t[slot ");
+            sb.append(i);
+            sb.append("] ON=");
+            sb.append(onCommands[i]);
+            sb.append(", OFF=");
+            sb.append(offCommands[i]);
+            sb.append("\n");
+        }
+        
+        sb.append("\t[slot ");
+        sb.append(i);
+        sb.append("] UNDO=");
+        sb.append(undoCommand);
+        sb.append("\n}");
+        
+        return sb.toString();
     }
     
     public static void main(String[] args) {
@@ -89,18 +119,44 @@ public class RemoteControlMultiple {
         commandLightLivingRoomOn.setLight(lightLivingRoom);
         CommandLightOff commandLightLivingRoomOff = new CommandLightOff(lightLivingRoom);
         
+        CommandMacro commandMacroOn = new CommandMacro(new Command[]{commandLightKitchenOn, commandDoorGarageOpen, commandLightLivingRoomOn});
+        CommandMacro commandMacroOff = new CommandMacro(new Command[]{commandLightKitchenOff, commandDoorGrarageClose, commandLightLivingRoomOff});
+        
         remoteControlMultiple.setCommand(0, commandLightKitchenOn, commandLightKitchenOff);
         remoteControlMultiple.setCommand(1, commandDoorGarageOpen, commandDoorGrarageClose);
         remoteControlMultiple.setCommand(2, commandLightLivingRoomOn, commandLightLivingRoomOff);
+        remoteControlMultiple.setCommand(3, commandMacroOn, commandMacroOff);
         
+        System.out.println(remoteControlMultiple);
+        
+        System.out.print("SLOT 2 ON: ");
         remoteControlMultiple.onButtonPressed(2);
+        
+        System.out.print("SLOT 1 OFF: ");
         remoteControlMultiple.offButtonPressed(1);
         
+        System.out.print("SLOT UNDO: ");
         remoteControlMultiple.undoButtonPressed();
         
+        System.out.print("SLOT UNDO: ");
+        remoteControlMultiple.undoButtonPressed();
+        
+        System.out.print("SLOT 0 OFF: ");
         remoteControlMultiple.offButtonPressed(0);
         
+        System.out.print("SLOT 3 ON: ");
+        remoteControlMultiple.onButtonPressed(3);
+        
+        System.out.print("SLOT UNDO: ");
         remoteControlMultiple.undoButtonPressed();
+        
+        System.out.print("SLOT UNDO: ");
+        remoteControlMultiple.undoButtonPressed();
+        
+        System.out.print("SLOT UNDO: ");
+        remoteControlMultiple.undoButtonPressed();
+        
+        System.out.println("");
         
         System.out.println(remoteControlMultiple);
     }
