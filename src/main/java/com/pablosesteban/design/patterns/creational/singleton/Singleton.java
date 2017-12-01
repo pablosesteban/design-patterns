@@ -11,7 +11,7 @@ package com.pablosesteban.design.patterns.creational.singleton;
  */
 
 /*
-SINGLETON DESIGN PATTERN
+DESIGN PATTERN: SINGLETON
     ensures a class only has ONE instance and provide a global point of access to it from the client
 
     sometimes it's important for some classes to have exactly one instance (an object that contains registry settings, etc...)

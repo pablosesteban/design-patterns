@@ -22,6 +22,11 @@ import java.util.Stack;
  * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
  */
 
+/*
+DESIGN PATTERN: COMMAND
+    it is used when you need to decouple an object making requests from the objects that know how to perform the requests
+*/
+
 // this time around the remote is going to handle several ON and OFF commands
 public class RemoteControlMultiple {
     private Command[] onCommands;
