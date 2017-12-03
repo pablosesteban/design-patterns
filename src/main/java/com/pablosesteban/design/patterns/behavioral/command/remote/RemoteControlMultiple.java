@@ -24,7 +24,11 @@ import java.util.Stack;
 
 /*
 DESIGN PATTERN: COMMAND
+    give us a way to package a piece of computation (a receiver and a set of actions) and pass it around as a first-class object
+
     it is used when you need to decouple an object making requests from the objects that know how to perform the requests
+
+    can be used to queuing request (web servers) or loggin request
 */
 
 // this time around the remote is going to handle several ON and OFF commands
