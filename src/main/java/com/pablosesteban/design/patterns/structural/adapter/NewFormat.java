@@ -12,7 +12,9 @@ package com.pablosesteban.design.patterns.structural.adapter;
 
 /*
 TARGET INTERFACE
-    
+    the interface the client is implemented against to
+
+    the adapter must implement it
 */
 public interface NewFormat {
     void play();

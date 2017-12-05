@@ -12,7 +12,9 @@ package com.pablosesteban.design.patterns.structural.adapter.legacy;
 
 /*
 ADAPTEE INTERFACE
-    
+    the interface which is going to be adapted
+
+    all requests get delegated to it at the end
 */
 public interface OldFormat {
     void playFile();

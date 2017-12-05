@@ -14,5 +14,10 @@ public class Avi implements OldFormat {
     public void playFile() {
         System.out.println("Playing avi file");
     }
+
+    @Override
+    public String toString() {
+        return "Avi{" + '}';
+    }
     
 }

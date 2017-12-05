@@ -14,5 +14,10 @@ public class Mp4 implements NewFormat {
     public void play() {
         System.out.println("Playing mp4 file");
     }
+
+    @Override
+    public String toString() {
+        return "Mp4{" + '}';
+    }
     
 }

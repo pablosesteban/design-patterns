@@ -14,7 +14,15 @@ import com.pablosesteban.design.patterns.structural.adapter.legacy.OldFormat;
 
 /*
 ADAPTER CLASS
-    
+    is the interface your client expects to see
+
+    translates the request from client using the adaptee interface
+
+    must implement the interface of the type you’re adapting to (target interface)
+
+    must hold a reference (composition) to the object that we are adapting (adaptee interface)
+
+    must implement all the methods in the target interface delegating in the adaptee interface
 */
 public class OldFormatAdapter implements NewFormat {
     private OldFormat oldFormat;
@@ -26,6 +34,11 @@ public class OldFormatAdapter implements NewFormat {
     @Override
     public void play() {
         oldFormat.playFile();
+    }
+
+    @Override
+    public String toString() {
+        return "OldFormatAdapter{" + "oldFormat=" + oldFormat + '}';
     }
     
 }

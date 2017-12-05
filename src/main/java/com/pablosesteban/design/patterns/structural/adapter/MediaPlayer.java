@@ -17,8 +17,38 @@ import com.pablosesteban.design.patterns.structural.adapter.legacy.OldFormat;
  */
 
 /*
+DESIGN PATTERN: ADAPTER
+    converts the interface of a class into another interface the clients expect
+
+    lets classes work together that couldn’t otherwise because of incompatible interfaces
+
+    DECOUPLES the client from the implemented interface, and if we expect the interface to change over time, the
+    adapter encapsulates that change so that the client doesn’t have to be modified each time it needs to operate
+    against a different interface
+
+    OBJECT ADAPTER
+        uses composition to wrap the adaptee
+
+        has the added advantage that we can use an adapter with any subclass of the adaptee
+
+        binds the client to an interface, not an implementation (target interface)
+
+    CLASS ADAPTER
+        instead of using composition to adapt the Adaptee, the Adapter now subclasses the Adaptee and the Target classes
+
+        needs multiple inheritance to implement it, which isn’t possible in Java
+
+    TWO WAY ADAPTER
+        supports both interfaces
+        
+        just implement both interfaces involved, so the adapter can act in both ways
+*/
+
+/*
 CLIENT
-    
+    is implemented against the target interface
+
+    makes a request to the adapter using the target interface and receives the results without knowing there is an adapter doing the translation
 */
 public class MediaPlayer {
     private List<NewFormat> supportedFormats = new ArrayList<>();
@@ -32,6 +62,12 @@ public class MediaPlayer {
     public void removeFormat(NewFormat format) {
         if (supportedFormats.contains(format)) {
             supportedFormats.remove(format);
+        }
+    }
+    
+    public void playAll() {
+        for (NewFormat supportedFormat : supportedFormats) {
+            supportedFormat.play();
         }
     }
 
@@ -56,6 +92,8 @@ public class MediaPlayer {
         
         mediaPlayer.addFormat(mp3Adapter);
         mediaPlayer.addFormat(aviAdapter);
+        
+        mediaPlayer.playAll();
         
         System.out.println(mediaPlayer);
     }

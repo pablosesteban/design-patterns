@@ -14,5 +14,9 @@ public class Mp3 implements OldFormat {
     public void playFile() {
         System.out.println("Playing mp3 file");
     }
-    
+
+    @Override
+    public String toString() {
+        return "Mp3{" + '}';
+    }
 }
