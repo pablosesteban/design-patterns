@@ -84,9 +84,12 @@ public class MediaPlayer {
         OldFormat avi = new Avi();
         
         mediaPlayer.addFormat(mp4);
-//        mediaPlayer.addFormat(mp3);
-//        mediaPlayer.addFormat(avi);
         
+        // different interface, cannot use those two
+        //mediaPlayer.addFormat(mp3);
+        //mediaPlayer.addFormat(avi);
+        
+        // using the adapter
         OldFormatAdapter mp3Adapter = new OldFormatAdapter(mp3);
         OldFormatAdapter aviAdapter = new OldFormatAdapter(avi);
         
