@@ -9,9 +9,27 @@ package com.pablosesteban.design.patterns.behavioral.templatemethod;
  *
  * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
  */
+
+/*
+DESIGN PATTERN: TEMPLATE METHOD
+    is all about creating a template for an algorithm (a set of steps)
+
+    defines the skeleton of an algorithm in a method, deferring some steps to subclasses, i.e. letting subclasses redefine certain
+    steps of an algorithm without changing the algorithm’s structure (maximizes reuse among the subclasses)
+
+    the algorithm is decoupled from the actual implementation of each specific operations
+
+    ensures the algorithm’s structure stays unchanged, while subclasses provide some part of the implementation
+*/
 public abstract class CaffeineBeverage {
-    //TEMPLATE METHOD: controls the algorithm but at certain points in the algorithm, it lets the subclass supply the implementation of the steps
-    public final void prepareBeverage() {
+    /*
+    TEMPLATE METHOD
+        controls the algorithm but at certain points in the algorithm, it lets the subclass supply the implementation of the steps
+        
+        must be declared FINAL in order to prevent subclasses from reworking the sequence of steps in the algorithm and concentrate
+        knowledge about the algorithm in one class
+    */
+    protected final void prepareBeverage() {
         //ALGORITHM
         boilWater();
         brew();
@@ -19,6 +37,7 @@ public abstract class CaffeineBeverage {
         addCondiments();
     }
     
+    // common operations of the algorithm
     protected void boilWater() {
         System.out.println("Boiling water");
     }
@@ -27,6 +46,7 @@ public abstract class CaffeineBeverage {
         System.out.println("Pouring into cup");
     }
     
+    // some steps are abstract (specific operations)
     protected abstract void brew();
     protected abstract void addCondiments();
     
