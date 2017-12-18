@@ -3,16 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.pablosesteban.design.patterns.creational.factory.abstractFactory.product.ingredient.cheese;
+package com.pablosesteban.design.patterns.creational.factory.abstract_factory.product.ingredient.pepperoni;
 
 /**
  *
  * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
  */
-public class MozzarellaCheese implements Cheese {
-    private final String name = "Mozzarella Cheese";
+public class SlicedPepperoni implements Pepperoni {
+    private final String name = "Sliced Pepperoni";
     
-    @Override
     public String getName() {
         return name;
     }

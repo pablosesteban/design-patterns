@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.pablosesteban.design.patterns.creational.factory.abstractFactory.creator.pizza_store;
+package com.pablosesteban.design.patterns.creational.factory.abstract_factory.creator.pizza_store;
 
-import com.pablosesteban.design.patterns.creational.factory.abstractFactory.creator.ingredient.NYIngredientFactory;
-import com.pablosesteban.design.patterns.creational.factory.abstractFactory.product.pizza.CheesePizza;
-import com.pablosesteban.design.patterns.creational.factory.abstractFactory.product.pizza.PepperoniPizza;
-import com.pablosesteban.design.patterns.creational.factory.abstractFactory.product.pizza.Pizza;
+import com.pablosesteban.design.patterns.creational.factory.abstract_factory.creator.ingredient.NYIngredientFactory;
+import com.pablosesteban.design.patterns.creational.factory.abstract_factory.product.pizza.CheesePizza;
+import com.pablosesteban.design.patterns.creational.factory.abstract_factory.product.pizza.PepperoniPizza;
+import com.pablosesteban.design.patterns.creational.factory.abstract_factory.product.pizza.Pizza;
 
 /**
  *

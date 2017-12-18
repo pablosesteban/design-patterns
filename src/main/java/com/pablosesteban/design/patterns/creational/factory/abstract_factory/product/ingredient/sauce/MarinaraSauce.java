@@ -3,18 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.pablosesteban.design.patterns.creational.factory.abstractFactory.product.ingredient.dough;
+package com.pablosesteban.design.patterns.creational.factory.abstract_factory.product.ingredient.sauce;
 
 /**
  *
  * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
  */
-
-/*
-ABSTRACT PRODUCT
-    the product family
-*/
-public interface Dough {
-    String getName();
+public class MarinaraSauce implements Sauce {
+    private final String name = "Marinara Sauce";
+    
+    public String getName() {
+        return name;
+    }
     
 }

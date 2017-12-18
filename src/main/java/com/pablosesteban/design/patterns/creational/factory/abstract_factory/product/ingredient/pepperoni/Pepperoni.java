@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.pablosesteban.design.patterns.creational.factory.abstractFactory.product.ingredient.sauce;
+package com.pablosesteban.design.patterns.creational.factory.abstract_factory.product.ingredient.pepperoni;
 
 /**
  *
@@ -14,7 +14,7 @@ package com.pablosesteban.design.patterns.creational.factory.abstractFactory.pro
 ABSTRACT PRODUCT
     the product family
 */
-public interface Sauce {
+public interface Pepperoni {
     String getName();
     
 }

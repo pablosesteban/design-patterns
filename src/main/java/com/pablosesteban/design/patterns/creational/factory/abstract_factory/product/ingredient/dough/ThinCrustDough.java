@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.pablosesteban.design.patterns.creational.factory.abstractFactory.product.ingredient.dough;
+package com.pablosesteban.design.patterns.creational.factory.abstract_factory.product.ingredient.dough;
 
 /**
  *

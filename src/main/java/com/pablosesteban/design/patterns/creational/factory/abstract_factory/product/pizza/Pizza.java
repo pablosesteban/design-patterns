@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.pablosesteban.design.patterns.creational.factory.abstractFactory.product.pizza;
+package com.pablosesteban.design.patterns.creational.factory.abstract_factory.product.pizza;
 
-import com.pablosesteban.design.patterns.creational.factory.abstractFactory.creator.ingredient.IngredientFactory;
-import com.pablosesteban.design.patterns.creational.factory.abstractFactory.product.ingredient.cheese.Cheese;
-import com.pablosesteban.design.patterns.creational.factory.abstractFactory.product.ingredient.dough.Dough;
-import com.pablosesteban.design.patterns.creational.factory.abstractFactory.product.ingredient.pepperoni.Pepperoni;
-import com.pablosesteban.design.patterns.creational.factory.abstractFactory.product.ingredient.sauce.Sauce;
+import com.pablosesteban.design.patterns.creational.factory.abstract_factory.creator.ingredient.IngredientFactory;
+import com.pablosesteban.design.patterns.creational.factory.abstract_factory.product.ingredient.cheese.Cheese;
+import com.pablosesteban.design.patterns.creational.factory.abstract_factory.product.ingredient.dough.Dough;
+import com.pablosesteban.design.patterns.creational.factory.abstract_factory.product.ingredient.pepperoni.Pepperoni;
+import com.pablosesteban.design.patterns.creational.factory.abstract_factory.product.ingredient.sauce.Sauce;
 
 /**
  *

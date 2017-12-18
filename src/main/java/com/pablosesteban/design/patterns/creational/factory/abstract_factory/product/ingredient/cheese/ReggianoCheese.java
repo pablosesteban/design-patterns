@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.pablosesteban.design.patterns.creational.factory.abstractFactory.product.ingredient.sauce;
+package com.pablosesteban.design.patterns.creational.factory.abstract_factory.product.ingredient.cheese;
 
 /**
  *
  * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
  */
-public class MarinaraSauce implements Sauce {
-    private final String name = "Marinara Sauce";
+public class ReggianoCheese implements Cheese {
+    private final String name = "Reggiano Cheese";
     
     public String getName() {
         return name;
