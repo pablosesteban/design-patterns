@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.pablosesteban.design.patterns.creational.factory.simpleFactory.creator;
+package com.pablosesteban.design.patterns.creational.factory.simple_factory.creator;
 
-import com.pablosesteban.design.patterns.creational.factory.simpleFactory.product.CheesePizza;
-import com.pablosesteban.design.patterns.creational.factory.simpleFactory.product.PepperoniPizza;
-import com.pablosesteban.design.patterns.creational.factory.simpleFactory.product.Pizza;
+import com.pablosesteban.design.patterns.creational.factory.simple_factory.product.CheesePizza;
+import com.pablosesteban.design.patterns.creational.factory.simple_factory.product.PepperoniPizza;
+import com.pablosesteban.design.patterns.creational.factory.simple_factory.product.Pizza;
 
 /**
  *
