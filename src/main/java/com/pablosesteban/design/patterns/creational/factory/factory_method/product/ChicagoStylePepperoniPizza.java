@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.pablosesteban.design.patterns.creational.factory.factoryMethod.product;
+package com.pablosesteban.design.patterns.creational.factory.factory_method.product;
 
 /**
  *
@@ -16,12 +16,12 @@ CONCRETE PRODUCT
 
     "low-level" component and it extends Pizza abstraction to achieve DI
 */
-public class NYStyleCheesePizza extends Pizza {
-    public NYStyleCheesePizza() {
-        name = "NY Style Cheese Pizza";
-        dough = "Thin Crust Dough";
-        sauce = "Marinara Sauce";
-        toppings.add("Grated Reggiano Cheese");
+public class ChicagoStylePepperoniPizza extends Pizza {
+    public ChicagoStylePepperoniPizza() {
+        name = "Chicago Style Pepperoni Pizza";
+        dough = "Thick Crust Dough";
+        sauce = "Tomato Sauce";
+        toppings.add("Sliced Pepperoni");
     }
     
 }

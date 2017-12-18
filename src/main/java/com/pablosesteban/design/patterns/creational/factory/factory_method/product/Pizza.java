@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.pablosesteban.design.patterns.creational.factory.factoryMethod.product;
+package com.pablosesteban.design.patterns.creational.factory.factory_method.product;
 
 import java.util.ArrayList;
 
