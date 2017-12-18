@@ -21,6 +21,13 @@ DESIGN PATTERN: TEMPLATE METHOD
 
     ensures the algorithm’s structure stays unchanged, while subclasses provide some part of the implementation
 */
+
+/*
+ABSTRACT CLASS
+    defines and controls the algorithm
+
+    implements common steps of the algorithm
+*/
 public abstract class CaffeineBeverage {
     /*
     TEMPLATE METHOD
@@ -37,12 +44,16 @@ public abstract class CaffeineBeverage {
         addCondiments();
     }
     
-    // common operations of the algorithm
-    protected void boilWater() {
+    /*
+    common operations of the algorithm
+    
+    declared FINAl in order to prevent subclasses to change it, as they should be the SAME for all those
+    */
+    protected final void boilWater() {
         System.out.println("Boiling water");
     }
     
-    protected void pourInCup() {
+    protected final void pourInCup() {
         System.out.println("Pouring into cup");
     }
     

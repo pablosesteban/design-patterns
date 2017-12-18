@@ -9,6 +9,11 @@ package com.pablosesteban.design_patterns.behavioral.template_method;
  *
  * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
  */
+
+/*
+CONCRETE CLASS
+    implements one or more specific steps of the algorithm
+*/
 public class Tea extends CaffeineBeverage {
     @Override
     protected void brew() {
