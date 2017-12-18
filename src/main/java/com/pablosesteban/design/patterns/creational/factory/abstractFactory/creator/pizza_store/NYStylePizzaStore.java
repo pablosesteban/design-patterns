@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.pablosesteban.design.patterns.creational.factory.abstractFactory.creator.pizzaStore;
+package com.pablosesteban.design.patterns.creational.factory.abstractFactory.creator.pizza_store;
 
 import com.pablosesteban.design.patterns.creational.factory.abstractFactory.creator.ingredient.NYIngredientFactory;
 import com.pablosesteban.design.patterns.creational.factory.abstractFactory.product.pizza.CheesePizza;
