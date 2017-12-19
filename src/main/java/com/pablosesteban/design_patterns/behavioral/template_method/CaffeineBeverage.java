@@ -23,6 +23,12 @@ DESIGN PATTERN: TEMPLATE METHOD
 */
 
 /*
+DESIGN PRINCIPLE: don't call us, we'll call you (Hollywood Principle)
+    gives us a way to prevent “dependency rot”, i.e when you have high-level components depending on low-level components depending on
+    high-level components depending... no one can easily understand the way a system is designed
+
+    this principle allow low-level components to hook themselves into a system, but the high-level components determine when they are needed, and how
+/*
 ABSTRACT CLASS
     defines and controls the algorithm
 
@@ -41,7 +47,11 @@ public abstract class CaffeineBeverage {
         boilWater();
         brew();
         pourInCup();
-        addCondiments();
+        
+        // the hook methods control a certain part of the algorithm
+        if (hasCondiments()) {
+            addCondiments();
+        }
     }
     
     /*
@@ -57,9 +67,29 @@ public abstract class CaffeineBeverage {
         System.out.println("Pouring into cup");
     }
     
-    // some steps are abstract (specific operations)
+    /*
+    ABSTRACT METHODS
+        to provided specific operations
+    
+        use them for the steps of the algorithm that MUST be implemented in each subclass (specific)
+    */
     protected abstract void brew();
     protected abstract void addCondiments();
+    
+    /*
+    HOOK METHODS
+        concrete methods that are declared NOT FINAL in the abstract class and are only given an empty or default implementation
+    
+        give subclasses the ability to “hook into” the algorithm at various points if they wish by OVERRIDING them, but a subclass is also free to ignore the hook by NOT OVERRIDING them
+    
+        can be used to conditionally control the flow of the algorithm in the abstract class
+    
+        use them for parts of the algorithm that are optional
+    */
+    protected boolean hasCondiments() {
+        // default implementation
+        return false;
+    }
     
     public static void main(String[] args) {
         System.out.println("-------Preparing Tea-------");
@@ -69,5 +99,10 @@ public abstract class CaffeineBeverage {
         System.out.println("-------Preparing Coffee-------");
         Coffee coffee = new Coffee();
         coffee.prepareBeverage();
+        
+        System.out.println("-------Preparing Coffee with Sugar and Milk-------");
+        coffee.setHasCondiments(true);
+        coffee.prepareBeverage();
     }
+    
 }

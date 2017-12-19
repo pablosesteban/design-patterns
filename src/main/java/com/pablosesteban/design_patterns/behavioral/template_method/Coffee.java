@@ -15,14 +15,26 @@ CONCRETE CLASS
     implements one or more specific steps of the algorithm
 */
 public class Coffee extends CaffeineBeverage {
+    private boolean hasCondiments;
+    
     @Override
     protected void brew() {
-        System.out.println("Dripping Coffee through filter");
+        System.out.println("Dripping coffee through filter");
     }
 
     @Override
     protected void addCondiments() {
-        System.out.println("Adding Sugar and Milk");
+        System.out.println("Adding sugar and milk");
+    }
+
+    // overriding the hook method
+    @Override
+    protected boolean hasCondiments() {
+        return hasCondiments;
+    }
+    
+    public void setHasCondiments(boolean hasCondiments) {
+        this.hasCondiments = hasCondiments;
     }
     
 }
