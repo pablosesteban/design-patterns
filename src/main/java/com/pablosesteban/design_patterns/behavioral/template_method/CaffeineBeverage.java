@@ -20,6 +20,14 @@ DESIGN PATTERN: TEMPLATE METHOD
     the algorithm is decoupled from the actual implementation of each specific operations
 
     ensures the algorithm’s structure stays unchanged, while subclasses provide some part of the implementation
+
+    it shows up so often because is it’s a great design tool for creating frameworks, where the framework controls how something gets done,
+    but leaves you (the person using the framework) to specify your own details about what is actually happening at each step of the framework’s algorithm
+
+    it was used in the Java API
+        sort() method in Arrays class
+
+        java.io has a read() method in InputStream that subclasses must implement and is used by the Tempate Method read(byte b[], int off, int len)
 */
 
 /*
