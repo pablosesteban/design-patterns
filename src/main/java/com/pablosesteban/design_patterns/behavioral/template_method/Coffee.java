@@ -13,6 +13,9 @@ package com.pablosesteban.design_patterns.behavioral.template_method;
 /*
 CONCRETE CLASS
     implements one or more specific steps of the algorithm
+
+    is the low-level component in the Hollywood Design Principle
+        never call the abstract class directly without being “called” first
 */
 public class Coffee extends CaffeineBeverage {
     private boolean hasCondiments;

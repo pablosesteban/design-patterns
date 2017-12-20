@@ -28,11 +28,22 @@ DESIGN PRINCIPLE: don't call us, we'll call you (Hollywood Principle)
     high-level components depending... no one can easily understand the way a system is designed
 
     this principle allow low-level components to hook themselves into a system, but the high-level components determine when they are needed, and how
+
+    is a technique for building frameworks or components so that lower-level components can be hooked into the computation, but without creating
+    dependencies between the lower-level components and the higher-level layers
+
+    low-level components will often end up calling a method defined above it in the inheritance hierarchy purely through inheritance, but
+    the principle wants to avoid creating explicit circular dependencies between the low-level component and the high-level ones
 /*
 ABSTRACT CLASS
     defines and controls the algorithm
 
     implements common steps of the algorithm
+
+    is the high-level component in the Hollywood Design Principle
+        has control over the algorithm and calls on the subclasses only when they’re needed for an implementation of a step
+
+        the client will depend on it instead of its subclasses reducing dependencies in the overall system
 */
 public abstract class CaffeineBeverage {
     /*
