@@ -50,7 +50,13 @@ public class BreakfastMenu {
         menu.addItem("Blueberry Pancakes", "Pancakes made with fresh blueberries", true, 3.49);
         menu.addItem("Waffles", "Waffles, with your choice of blueberries or strawberries", true, 3.59);
         
-        for (Iterator iterator = menu.iterator(); iterator.hasNext();) {
+        for (Iterator<MenuItem> iterator = menu.iterator(); iterator.hasNext();) {
+            if (iterator.next().isVegetarian()) {
+                iterator.remove();
+            }
+        }
+        
+        for (Iterator<MenuItem> iterator = menu.iterator(); iterator.hasNext();) {
             System.out.println(iterator.next());
         }
     }

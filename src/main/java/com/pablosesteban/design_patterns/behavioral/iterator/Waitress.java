@@ -20,6 +20,7 @@ public class Waitress {
         this.dinerMenu = dinerMenu;
     }
     
+    // the Iterator allows the Waitress to be decoupled from the actual implementation of the concrete classes
     public void printMenu() {
         System.out.println("----------BREAKFAST----------");
         printMenu(breakfastMenu.iterator());
@@ -29,6 +30,7 @@ public class Waitress {
     }
     
     private void printMenu(Iterator<MenuItem> it) {
+        // a loop that polymorphically handles any collection of items as long as it implements Iterator interface
         while (it.hasNext()) {
             System.out.println(it.next());
         }

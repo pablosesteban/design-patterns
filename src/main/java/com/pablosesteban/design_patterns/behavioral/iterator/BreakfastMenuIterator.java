@@ -12,6 +12,11 @@ import java.util.NoSuchElementException;
  *
  * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
  */
+
+/*
+DESIGN PATTERN: ITERATOR
+    relies on an interface called Iterator (JDK supplies one) which encapsulates the iteration
+*/
 public class BreakfastMenuIterator implements Iterator<MenuItem> {
     private MenuItem[] items;
     private int idx;
@@ -32,6 +37,22 @@ public class BreakfastMenuIterator implements Iterator<MenuItem> {
         }
         
         return items[idx++];
+    }
+    
+    // optional
+    @Override
+    public void remove() {
+        if (idx <= 0) {
+            throw new IllegalStateException();
+        }
+        
+        if (items[idx-1] != null) {
+            for (int i = idx-1; i < items.length-1; i++) {
+                items[i] = items[++i];
+            }
+            
+            items[items.length-1] = null;
+        }
     }
     
 }

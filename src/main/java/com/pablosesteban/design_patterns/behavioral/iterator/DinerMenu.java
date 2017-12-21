@@ -32,7 +32,8 @@ public class DinerMenu {
         just needs to use the Iterator to step through the items in the collection
     */
     public Iterator<MenuItem> iterator() {
-        return new DinerMenuIterator(items);
+        // using the Iterator implemented by Collection classes
+        return items.iterator();
     }
     
     public void addItem(String name, String description, boolean vegetarian, double price) {
