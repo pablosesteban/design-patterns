@@ -56,7 +56,7 @@ public class MenuItem {
 
     @Override
     public String toString() {
-        return "MenuItem{" + "name=" + name + ", description=" + description + ", price=" + price + ", vegetarian=" + vegetarian + '}';
+        return "MenuItem{" + "name=" + name + ", vegetarian=" + vegetarian + '}';
     }
     
 }

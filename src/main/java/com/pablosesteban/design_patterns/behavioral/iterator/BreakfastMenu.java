@@ -11,7 +11,9 @@ import java.util.Iterator;
  *
  * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
  */
-public class BreakfastMenu {
+
+// CONCRETE AGGREGATE
+public class BreakfastMenu implements Menu {
     private MenuItem[]items;
     private int size;
 

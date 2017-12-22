@@ -13,7 +13,9 @@ import java.util.List;
  *
  * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
  */
-public class DinerMenu {
+
+// CONCRETE AGGREGATE
+public class DinerMenu implements Menu {
     private List<MenuItem> items;
 
     public DinerMenu() {

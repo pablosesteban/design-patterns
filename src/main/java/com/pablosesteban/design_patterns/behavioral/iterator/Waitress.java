@@ -11,11 +11,13 @@ import java.util.Iterator;
  *
  * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
  */
+
+// CLIENT
 public class Waitress {
-    private BreakfastMenu breakfastMenu;
-    private DinerMenu dinerMenu;
+    private Menu breakfastMenu;
+    private Menu dinerMenu;
     
-    public Waitress(BreakfastMenu breakfastMenu, DinerMenu dinerMenu) {
+    public Waitress(Menu breakfastMenu, Menu dinerMenu) {
         this.breakfastMenu = breakfastMenu;
         this.dinerMenu = dinerMenu;
     }
