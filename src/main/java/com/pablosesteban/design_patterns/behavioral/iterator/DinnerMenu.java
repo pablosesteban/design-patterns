@@ -15,10 +15,10 @@ import java.util.List;
  */
 
 // CONCRETE AGGREGATE
-public class DinerMenu implements Menu {
+public class DinnerMenu implements Menu {
     private List<MenuItem> items;
 
-    public DinerMenu() {
+    public DinnerMenu() {
         items = new ArrayList<>();
     }
 
@@ -43,7 +43,7 @@ public class DinerMenu implements Menu {
     }
     
     public static void main(String[] args) {
-        DinerMenu menu = new DinerMenu();
+        DinnerMenu menu = new DinnerMenu();
         
         menu.addItem("K&B’s Pancake Breakfast", "Pancakes with scrambled eggs, and toast", true, 2.99);
         menu.addItem("Regular Pancake Breakfast", "Pancakes with fried eggs, sausage", false, 2.99);
