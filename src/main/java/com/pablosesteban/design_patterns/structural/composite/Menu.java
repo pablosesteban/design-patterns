@@ -49,7 +49,7 @@ public class Menu extends MenuComponent {
     */
     @Override
     public void print() {
-        // JSON representation
+        // JSON-like representation
         System.out.print("Menu{" + "name='" + name + "', description='" + description + "', items={");
         
         for (int i = 0; i < children.size()-1; i++) {

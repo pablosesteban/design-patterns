@@ -32,6 +32,7 @@ public class MenuItem extends MenuComponent {
     // only implements the "operation" methods
     @Override
     public void print() {
+        // JSON-like representation
         System.out.print("MenuItem{" + "name='" + name + "', description='" + description + "', price=" + price + ", vegetarian=" + vegetarian + '}');
     }
 
