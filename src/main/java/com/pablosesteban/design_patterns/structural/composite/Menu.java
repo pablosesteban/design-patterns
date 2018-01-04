@@ -6,7 +6,6 @@
 package com.pablosesteban.design_patterns.structural.composite;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -23,7 +22,7 @@ COMPOSITE CLASS
     can also implement some of the Leaf related operations
 */
 public class Menu extends MenuComponent {
-    // composite objects can have any number of children (leaf or composite)
+    // composite objects can have any number of children (leaf or composite) referenced by the component interface
     protected List<MenuComponent> children = new ArrayList<>();
     
     public Menu(String name, String description) {

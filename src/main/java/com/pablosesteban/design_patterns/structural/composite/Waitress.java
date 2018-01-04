@@ -10,6 +10,25 @@ package com.pablosesteban.design_patterns.structural.composite;
  * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
  */
 
+/*
+DESIGN PATTERN: COMPOSITE
+    allows you to compose objects into tree structures to represent part-whole hierarchies and lets clients treat individual
+    objects (leaf) and compositions of objects (composite) uniformly
+    
+    allows us to build structures of objects in the form of trees that contain both compositions of objects and individual objects as nodes
+
+    using a composite structure, we can apply the same operations over both composites and individual objects, i.e. in most 
+    cases we can ignore the differences between compositions of objects and individual objects
+
+    we could say that the this pattern takes the Single Responsibility design principle and trades it for TRANSPARENCY
+        by allowing the Component interface to contain the child management operations and the leaf operations, a client can
+        treat both composites and leaf nodes uniformly, so whether an element is a composite or leaf node becomes transparent to the client
+
+        we lose a bit of safety because a client might try to do something inappropriate or meaningless on an element (like
+        adding a child to a leaf object) but this is a tradeoff because of the design decision (you can shift your
+        perspective and see a leaf as a node with zero children)
+*/
+
 // CLIENT
 public class Waitress {
     // the top level component, the one that contains all the other components (leaf or composite)

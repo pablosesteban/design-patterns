@@ -5,8 +5,6 @@
  */
 package com.pablosesteban.design_patterns.structural.composite;
 
-import java.util.Objects;
-
 /**
  *
  * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
@@ -18,7 +16,7 @@ COMPONENT INTERFACE
 
     all components must implement this interface; however, because leaves and composite have different roles we
     can’t always define a default implementation for each method that makes sense, sometimes the best you can do
-    is throw a RuntimeException
+    is throw a RuntimeException and then overriding those that make sense in each subclass
 */
 public abstract class MenuComponent {
     protected String name;
