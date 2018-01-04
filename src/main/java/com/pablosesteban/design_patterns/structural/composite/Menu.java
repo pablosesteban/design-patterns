@@ -6,6 +6,7 @@
 package com.pablosesteban.design_patterns.structural.composite;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -24,6 +25,7 @@ COMPOSITE CLASS
 public class Menu extends MenuComponent {
     // composite objects can have any number of children (leaf or composite) referenced by the component interface
     protected List<MenuComponent> children = new ArrayList<>();
+    protected Iterator iterator;
     
     public Menu(String name, String description) {
         this.name = name;
@@ -79,5 +81,15 @@ public class Menu extends MenuComponent {
     @Override
     public void add(MenuComponent component) {
         children.add(component);
+    }
+
+    @Override
+    public Iterator iterator() {
+        // one Iterator per composite object
+        if (iterator == null) {
+            iterator = new CompositeIterator(children.iterator());
+        }
+        
+        return iterator;
     }
 }

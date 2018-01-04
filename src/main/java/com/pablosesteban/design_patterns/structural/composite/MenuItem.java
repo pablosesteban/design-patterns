@@ -5,6 +5,8 @@
  */
 package com.pablosesteban.design_patterns.structural.composite;
 
+import java.util.Iterator;
+
 /**
  *
  * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
@@ -81,5 +83,10 @@ public class MenuItem extends MenuComponent {
         final MenuItem menuItem = (MenuItem) obj;
         
         return name.equals(menuItem.getName()) && description.equals(menuItem.getDescription()) && price == menuItem.price && vegetarian == menuItem.isVegetarian();
+    }
+
+    @Override
+    public Iterator iterator() {
+        return new NullIterator();
     }
 }

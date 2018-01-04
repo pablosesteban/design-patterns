@@ -5,6 +5,8 @@
  */
 package com.pablosesteban.design_patterns.structural.composite;
 
+import java.util.Iterator;
+
 /**
  *
  * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
@@ -56,6 +58,8 @@ public abstract class MenuComponent {
         throw new UnsupportedOperationException("Operation not supported");
     }
 
+    public abstract Iterator iterator();
+    
     @Override
     public int hashCode() {
         int result = 17;
