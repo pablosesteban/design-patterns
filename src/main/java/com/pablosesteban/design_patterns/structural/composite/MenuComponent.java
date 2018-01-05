@@ -57,8 +57,9 @@ public abstract class MenuComponent {
     public MenuComponent getChild(int i) {
         throw new UnsupportedOperationException("Operation not supported");
     }
-
-    public abstract Iterator iterator();
+    
+    // to iterate over an entire composite
+    public abstract Iterator<MenuComponent> iterator();
     
     @Override
     public int hashCode() {

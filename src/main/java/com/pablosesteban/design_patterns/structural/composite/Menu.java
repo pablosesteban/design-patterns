@@ -25,7 +25,7 @@ COMPOSITE CLASS
 public class Menu extends MenuComponent {
     // composite objects can have any number of children (leaf or composite) referenced by the component interface
     protected List<MenuComponent> children = new ArrayList<>();
-    protected Iterator iterator;
+    protected Iterator<MenuComponent> iterator;
     
     public Menu(String name, String description) {
         this.name = name;
@@ -53,9 +53,16 @@ public class Menu extends MenuComponent {
         // JSON-like representation
         System.out.print("Menu{" + "name='" + name + "', description='" + description + "', items={");
         
+        /*
+        INTERNAL ITERATOR
+            this kind of iterators are controled by the iterator itself, instead of the client
+        
+            are less flexibles because the client doesn't have any kind of control over the iteration process
+        */
         for (int i = 0; i < children.size()-1; i++) {
             System.out.print("item=");
             
+            // because it is the iterator that is stepping through the elements, you have to tell the iterator what to do with those elements as it goes through
             children.get(i).print();
             
             System.out.print(", ");
@@ -84,8 +91,8 @@ public class Menu extends MenuComponent {
     }
 
     @Override
-    public Iterator iterator() {
-        // one Iterator per composite object
+    public Iterator<MenuComponent> iterator() {
+        // creates an Iterator with its children for this composite (only one per composite object)
         if (iterator == null) {
             iterator = new CompositeIterator(children.iterator());
         }

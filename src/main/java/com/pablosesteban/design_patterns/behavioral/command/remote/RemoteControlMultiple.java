@@ -56,7 +56,7 @@ public class RemoteControlMultiple {
         }
         
         undoCommand = new Stack<>();
-        // not really needed but to use the null object "design pattern"
+        // not really needed but to use the Null Object "design pattern"
         undoCommand.push(commandDefault);
     }
     

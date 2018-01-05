@@ -13,11 +13,20 @@ import java.util.Stack;
  * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
  */
 
-// iterator which iterates over the Composite objects in the tree, and of making sure all the child composite (and child child composite, and so on) are included
+/*
+EXTERNAL ITERATOR
+    the client controls the iteration by calling next() to get the next element
+
+    must maintain its position in the iteration so that an outside client can drive the iteration by calling hasNext() and next() methods
+
+    it iterates over a Composite object and of making sure all the child composites (and child child composite, and so on) are included
+*/
 public class CompositeIterator implements Iterator<MenuComponent> {
-    private Stack stack = new Stack();
+    // we need to maintain the position over the composite recursive structure using a Stack which has only the iterators of a composite child
+    private Stack<Iterator<MenuComponent>> stack = new Stack<>();
     
-    public CompositeIterator(Iterator iterator) {
+    // the iterator of the top level composite we’re going to iterate over is passed in and thrown into the stack
+    public CompositeIterator(Iterator<MenuComponent> iterator) {
         stack.push(iterator);
     }
     
@@ -27,12 +36,34 @@ public class CompositeIterator implements Iterator<MenuComponent> {
             return false;
         }
         
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        // get the iterator off the TOP (doesn't remove it)
+        Iterator<MenuComponent> iterator = stack.peek();
+        
+        if (!iterator.hasNext()) {
+            // get the iterator off the TOP (removing it)
+            stack.pop();
+            
+            return hasNext();
+        }else {
+            return true;
+        }
     }
 
     @Override
     public MenuComponent next() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (!hasNext()) {
+            return null;
+        }
+        
+        Iterator<MenuComponent> iterator = stack.peek();
+        MenuComponent component = iterator.next();
+        
+        // only if the component is a composite it needs to be included in the iteration
+        if (component instanceof Menu) {
+            stack.push(component.iterator());
+        }
+        
+        return component;
     }
     
 }

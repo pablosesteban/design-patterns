@@ -50,7 +50,7 @@ DESIGN PRINCIPLE: a class should have only one reason to change (Single Responsi
     classes that adhere to the principle tend to have high cohesion and are more maintainable
 */
 
-// CONCRETE ITERATOR (ABSTRACT ITERATOR is java.util.Iterator)
+// CONCRETE ITERATOR (ABSTRACT ITERATOR is java.util.Iterator) it is an EXTERNAL ITERATOR
 public class BreakfastMenuIterator implements Iterator<MenuItem> {
     private MenuItem[] items;
     private int idx;

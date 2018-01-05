@@ -86,7 +86,8 @@ public class MenuItem extends MenuComponent {
     }
 
     @Override
-    public Iterator iterator() {
+    public Iterator<MenuComponent> iterator() {
+        // leaf objects has nothing to iterate over, so the best way to deal with is use the Null Object "design pattern" as all Components has to implement an iterator
         return new NullIterator();
     }
 }

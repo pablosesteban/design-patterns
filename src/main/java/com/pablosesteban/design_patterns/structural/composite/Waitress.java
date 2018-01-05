@@ -5,6 +5,8 @@
  */
 package com.pablosesteban.design_patterns.structural.composite;
 
+import java.util.Iterator;
+
 /**
  *
  * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
@@ -34,7 +36,7 @@ public class Waitress {
     // the top level component, the one that contains all the other components (leaf or composite)
     private MenuComponent menus;
     
-    public Waitress(MenuComponent menus) {
+    public Waitress(Menu menus) {
         this.menus = menus;
     }
     
@@ -43,8 +45,26 @@ public class Waitress {
         menus.print();
     }
     
+    public void printVegetarianMenu() {
+        Iterator<MenuComponent> iterator = menus.iterator();
+        
+        while (iterator.hasNext()) {
+            MenuComponent component = iterator.next();
+            
+            // using try/catch for the program logic is not a good practice, but this time is a good option if we want TRANSPARENCY, i.e. treat leaf and composites in the same way
+            try {
+            if (component.isVegetarian()) {
+                component.print();
+                System.out.println();
+            }
+            }catch (UnsupportedOperationException uoe) {
+                // do nothing, composite objects are throwing it in its isVegetarian() method
+            }
+        }
+    }
+    
     public static void main(String[] args) {
-        MenuComponent menus = new Menu("MENUS", "All menus");
+        Menu menus = new Menu("MENUS", "All menus");
         
         MenuComponent breakfastMenu = new Menu("BREAKFAST", "Breakfast menu");
         MenuComponent lunchMenu = new Menu("LUNCH", "Lunch menu");
@@ -74,5 +94,6 @@ public class Waitress {
         
         Waitress w = new Waitress(menus);
         w.printMenu();
+        w.printVegetarianMenu();
     }
 }

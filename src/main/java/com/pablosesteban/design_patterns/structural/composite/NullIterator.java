@@ -13,14 +13,16 @@ import java.util.Iterator;
  */
 public class NullIterator implements Iterator<MenuComponent> {
 
+    // always returns false
     @Override
     public boolean hasNext() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return false;
     }
 
+    // always returns null
     @Override
     public MenuComponent next() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return null;
     }
     
 }
