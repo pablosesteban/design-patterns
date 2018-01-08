@@ -3,12 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.pablosesteban.design_patterns.behavioral.state;
+package com.pablosesteban.design_patterns.behavioral.state.badapproach;
 
 /**
  *
  * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
  */
+
+/*
+this approach of implement the state is not very OO:
+    isn’t adhering to the Open Closed Principle
+
+    it hasn’t encapsulate anything that varies
+
+this design is not going to be easy to maintain and further additions are likely to cause bugs in working code
+*/
 public class GumballMachine {
     // states
     private final static int SOLD_OUT = 0;
