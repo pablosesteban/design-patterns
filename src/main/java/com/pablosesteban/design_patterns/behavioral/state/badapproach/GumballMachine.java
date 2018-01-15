@@ -16,7 +16,7 @@ this approach of implement the state is not very OO:
 
     it hasn’t encapsulate anything that varies
 
-this design is not going to be easy to maintain and further additions are likely to cause bugs in working code
+this design is not going to be easy to maintain and extend, i.e. further additions are likely to cause bugs in working code
 */
 public class GumballMachine {
     // states
@@ -38,7 +38,7 @@ public class GumballMachine {
         }
     }
     
-    // actions
+    // actions: manage transitions in a bad way
     public void insertQuarter() {
         switch (state) {
             case HAS_QUARTER:
@@ -107,7 +107,7 @@ public class GumballMachine {
         }
     }
     
-    public void dispense() {
+    private void dispense() {
         switch (state) {
             case HAS_QUARTER:
                 System.out.println("No gumball dispensed");
