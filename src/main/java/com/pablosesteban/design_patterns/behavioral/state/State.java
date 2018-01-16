@@ -12,11 +12,14 @@ package com.pablosesteban.design_patterns.behavioral.state;
 
 /*
 STATE INTERFACE
-    interface for ALL states
+    defines a common interface for ALL concrete states (making all of them interchangeable)
 
     contains a method for every action that could happen
 
     each state in our design is going to encapsulate a state through a class which implements this interface
+
+    lets localize the behavior of each state in its own class and close each state for modification but left the GumballMachine opened
+    to extension by adding new state classes
 */
 public interface State {
     void insertQuarter();

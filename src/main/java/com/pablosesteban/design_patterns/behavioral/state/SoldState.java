@@ -44,5 +44,10 @@ public class SoldState implements State {
             gm.setState(gm.getSoldOutState());
         }
     }
+
+    @Override
+    public String toString() {
+        return "SoldState{" + '}';
+    }
     
 }

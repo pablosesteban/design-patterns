@@ -10,25 +10,52 @@ package com.pablosesteban.design_patterns.behavioral.state;
  * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
  */
 public class WinnerState implements State {
-
+    private GumballMachine gm;
+    
+    public WinnerState(GumballMachine gm) {
+        this.gm = gm;
+    }
+    
     @Override
     public void insertQuarter() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Please wait, we're already giving you a gumball");
     }
 
     @Override
     public void ejectQuarter() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Sorry, you already turned the crank");
     }
 
     @Override
     public void turnCrank() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Turning twice doesn’t get you another gumball");
     }
 
     @Override
     public void dispense() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        gm.releaseGumball();
+        
+        if (gm.getCount() == 0) {
+            gm.setState(gm.getSoldOutState());
+        }else {
+            // release the second gumball
+            gm.releaseGumball();
+            
+            System.out.println("You're a winner! You got two gumballs for your quarter");
+            
+            if (gm.getCount() > 0) {
+                gm.setState(gm.getNoQuarterState());
+            }else {
+                System.out.println("Machine is sold out");
+                
+                gm.setState(gm.getSoldOutState());
+            }
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "WinnerState{" + '}';
     }
     
 }

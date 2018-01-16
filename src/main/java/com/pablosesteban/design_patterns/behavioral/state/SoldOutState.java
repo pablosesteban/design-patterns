@@ -36,5 +36,10 @@ public class SoldOutState implements State {
     public void dispense() {
         System.out.println("No gumball dispensed");
     }
+
+    @Override
+    public String toString() {
+        return "SoldOutState{" + '}';
+    }
     
 }

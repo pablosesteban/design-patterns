@@ -9,6 +9,13 @@ package com.pablosesteban.design_patterns.behavioral.state;
  *
  * @author Pablo Santamarta Esteban <pablosesteban@gmail.com>
  */
+
+/*
+CONCRETE STATE
+    handle requests from the Context
+    
+    each one provides its own implementation for a request so, when the Context changes its state its behavior will change as well
+*/
 public class NoQuarterState implements State {
     private GumballMachine gm;
     
@@ -21,6 +28,7 @@ public class NoQuarterState implements State {
     public void insertQuarter() {
         System.out.println("Quarter inserted");
         
+        // state transitions are in State classes (trying to minimize the dependencies using getters)
         gm.setState(gm.getHasQuarterState());
     }
 
@@ -38,6 +46,11 @@ public class NoQuarterState implements State {
     @Override
     public void dispense() {
         System.out.println("You need to pay first");
+    }
+
+    @Override
+    public String toString() {
+        return "NoQuarterState{" + '}';
     }
     
 }
