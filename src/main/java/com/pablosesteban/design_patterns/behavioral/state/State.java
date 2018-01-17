@@ -14,17 +14,20 @@ package com.pablosesteban.design_patterns.behavioral.state;
 STATE INTERFACE
     defines a common interface for ALL concrete states (making all of them interchangeable)
 
-    contains a method for every action that could happen
+    contains a method for every action that could happen (state transition)
 
     each state in our design is going to encapsulate a state through a class which implements this interface
 
     lets localize the behavior of each state in its own class and close each state for modification but left the GumballMachine opened
     to extension by adding new state classes
+
+    this could be an abstract class and build in some default behavior for the methods so all “error response” behavior could be
+    generic and inherited from the abstract State class (avoid duplicated code)
 */
 public interface State {
+    // state transitions
     void insertQuarter();
     void ejectQuarter();
     void turnCrank();
     void dispense();
-    
 }

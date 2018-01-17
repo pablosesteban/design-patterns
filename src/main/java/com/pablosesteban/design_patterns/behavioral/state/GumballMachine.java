@@ -34,6 +34,8 @@ CONTEXT CLASS
     whenever a request is made on this class it is delegated to the current state to handle it
 
     the states are used by this to represent its internal state and behavior, so ALL request to the states come from the Context (never from the client directly)
+
+    if the client is going to instantiate a lot of Context objects, you may want to move the state instances into static instance variables and share them
 */
 public class GumballMachine {
     // states: instead of using ints, use State objects
@@ -44,18 +46,18 @@ public class GumballMachine {
     private State winnerState;
     
     private State state = soldOutState;
-    private int count = 0;
+    private int numberOfGumballs = 0;
     
-    public GumballMachine(int count) {
+    public GumballMachine(int numberOfGumballs) {
         soldOutState = new SoldOutState(this);
         noQuarterState = new NoQuarterState(this);
         hasQuarterState = new HasQuarterState(this);
         soldState = new SoldState(this);
         winnerState = new WinnerState(this);
         
-        this.count = count;
+        this.numberOfGumballs = numberOfGumballs;
         
-        if (count > 0) {
+        if (numberOfGumballs > 0) {
             state = noQuarterState;
         }
     }
@@ -72,18 +74,33 @@ public class GumballMachine {
     public void turnCrank() {
         state.turnCrank();
         
-        // we don't need a dispense method in this class as it is an internal action which cannot be called from here directly but from the state object
-        if (state instanceof SoldState || state instanceof WinnerState) { // in order not to dispense if the state is incorrect (because the turnCrank failed)
+        
+        /*
+        in order not to dispense if the state is incorrect, i.e because the turnCrank method failed
+        
+        other options could be having turnCrank() return a boolean or by introducing exceptions
+        */
+        if (state instanceof SoldState || state instanceof WinnerState) {
+            // we don't need a dispense method in this class as it is an internal action which cannot be called from the client directly but from the state object
             state.dispense();
         }
+    }
+    
+    // this time the state transition is controlled inside the Context
+    public void refill(int numberOfGumballs) {
+        this.numberOfGumballs += numberOfGumballs;
+        
+        System.out.println("Machine refilled with " + numberOfGumballs + " gumballs");
+        
+        state = noQuarterState;
     }
     
     // helper method
     void releaseGumball() {
         System.out.println("A gumball comes rolling out the slot");
         
-        if (count != 0) {
-            count--;
+        if (numberOfGumballs != 0) {
+            numberOfGumballs--;
         }
     }
     
@@ -114,11 +131,11 @@ public class GumballMachine {
     }
     
     public int getCount() {
-        return count;
+        return numberOfGumballs;
     }
     @Override
     public String toString() {
-        return "GumballMachine{" + "state=" + state + ", count=" + count + '}';
+        return "GumballMachine{" + "state=" + state + ", count=" + numberOfGumballs + '}';
     }
     
     public static void main(String[] args) {
@@ -152,6 +169,22 @@ public class GumballMachine {
         gm.turnCrank();
         gm.insertQuarter();
         gm.turnCrank();
+        System.out.println(gm);
+        
+        System.out.println("----TEST 5: Running out of gumballs----");
+        for (int i = 0; i < 10; i++) {
+            gm.insertQuarter();
+            
+            gm.turnCrank();
+            
+            System.out.println(gm);
+        }
+        gm.refill(20);
+        System.out.println(gm);
+        gm.insertQuarter();
+        gm.turnCrank();
+        System.out.println(gm);
+        gm.refill(10);
         System.out.println(gm);
     }
 }
