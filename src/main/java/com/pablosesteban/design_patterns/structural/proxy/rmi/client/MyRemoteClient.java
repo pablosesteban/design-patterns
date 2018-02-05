@@ -17,11 +17,13 @@ import java.rmi.NotBoundException;
 public class MyRemoteClient {
     public void go() {
         try {
-            MyRemoteServer service = (MyRemoteServer) Naming.lookup("rmi://127.0.0.1/RemoteHello");
+            MyRemoteServer service = (MyRemoteServer) Naming.lookup("rmi://127.0.0.1/RemoteHelloService");
             
             System.out.println(service.sayHello());
         }catch(IOException | NotBoundException e) {
             e.printStackTrace();
+            
+            System.exit(1);
         }
     }
     

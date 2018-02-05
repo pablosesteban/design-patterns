@@ -26,9 +26,13 @@ public class MyRemoteServerImpl extends UnicastRemoteObject implements MyRemoteS
         try {
             MyRemoteServer service = new MyRemoteServerImpl();
             
-            Naming.rebind("RemoteHello", service);
+            Naming.rebind("RemoteHelloService", service);
+            
+            System.out.println("Service ready!");
         }catch (IOException ioe) {
             ioe.printStackTrace();
+            
+            System.exit(1);
         }
     }
 }
