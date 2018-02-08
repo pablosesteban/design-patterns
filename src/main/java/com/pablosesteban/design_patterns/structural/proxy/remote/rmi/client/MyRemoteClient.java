@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.pablosesteban.design_patterns.structural.proxy.rmi.client;
+package com.pablosesteban.design_patterns.structural.proxy.remote.rmi.client;
 
-import com.pablosesteban.design_patterns.structural.proxy.rmi.server.MyRemoteServer;
+import com.pablosesteban.design_patterns.structural.proxy.remote.rmi.server.MyRemoteServer;
 import java.io.IOException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
