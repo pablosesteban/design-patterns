@@ -20,12 +20,9 @@ public class App {
     public static void main(String[] args) throws MalformedURLException {
         ImageProxy imageProxy = new ImageProxy(new URL("file://C:\\Users\\psantamartae\\Documents\\jjf-wallpaper_1600.jpg"));
         
-        JLabel label = new JLabel(imageProxy);
-
         JFrame frame = new JFrame("Image");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.add(label);
-        frame.pack();
+        frame.setIconImage(imageProxy.getImageIcon().getImage());
         frame.setVisible(true);
     }
 }

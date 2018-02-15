@@ -76,11 +76,11 @@ public class ImageProxy implements Icon {
         return 600;
     }
 
-    public ImageIcon getImage() {
+    public ImageIcon getImageIcon() {
         return imageIcon;
     }
 
-    public void setImage(ImageIcon image) {
+    public void setImageIcon(ImageIcon image) {
         this.imageIcon = image;
     }
 }
