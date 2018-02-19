@@ -70,7 +70,7 @@ public class App extends JFrame {
         
         getContentPane().add(imageComponent);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(1000,1000);
+        setSize(800, 600);
         setVisible(true);
     }
     

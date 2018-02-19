@@ -34,7 +34,7 @@ public class ImageProxy implements Icon {
         if (imageIcon != null) {
             imageIcon.paintIcon(c, g, x, y);
         }else {
-            g.drawString("Loading CD cover, please wait...", x, y);
+            g.drawString("Loading CD cover, please wait...", x+300, y+190);
             
             if (!isRetrievingImage) {
                 isRetrievingImage = true;
