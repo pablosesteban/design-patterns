@@ -32,6 +32,6 @@ public class ImageComponent extends JComponent {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         
-        icon.paintIcon(this, g, icon.getIconWidth(), icon.getIconHeight());
+        icon.paintIcon(this, g, super.getWidth()/3, super.getHeight()/3);
     }
 }
