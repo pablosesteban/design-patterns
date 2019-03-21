@@ -1,2 +1,2 @@
-# design-patterns
+# Design Patterns
 Repository for Studying Design Patterns
