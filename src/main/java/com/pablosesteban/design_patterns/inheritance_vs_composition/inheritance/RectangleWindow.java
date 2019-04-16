@@ -21,7 +21,7 @@ import com.pablosesteban.design_patterns.inheritance_vs_composition.composition.
  * 	- parent classes often define at least part of their subclasses' physical representation. Because inheritance
  * 	  exposes a subclass to details of its parent's implementation, it's often said that "inheritance breaks
  * 	  encapsulation".
- * 	- The implementation of a subclass becomes so bound up with the implementation of its parent class that any change
+ * 	- the implementation of a subclass becomes so bound up with the implementation of its parent class that any change
  * 	  in the parent's implementation will force the subclass to change. Implementation dependencies can cause problems
  * 	  when you're trying to reuse a subclass. Could any aspect of the inherited implementation not be appropriate for
  * 	  new problem domains, the parent class must be rewritten or replaced by something more appropriate. This dependency
